@@ -1,0 +1,21 @@
+digraph "NullHypothesis::student"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node59 [label="NullHypothesis::student",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node59 -> Node60 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="NullHypothesis::t_integration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a4e68aa128daae99c28f823a76880c0e7"];
+  Node60 -> Node61 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="NullHypothesis::critical\l_region1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#aab366022794f7b0c7dc4bad497824439"];
+  Node61 -> Node62 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node62 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e"];
+  Node62 -> Node63 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d"];
+  Node60 -> Node64 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node64 [label="NullHypothesis::critical\l_region2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a9e0b0a492ad47ecc4f83e8556ced3585"];
+  Node64 -> Node62 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 -> Node65 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node65 [label="NullHypothesis::critical\l_region3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#ae8f61ccce96e2d21add0241b3035f624"];
+  Node65 -> Node62 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

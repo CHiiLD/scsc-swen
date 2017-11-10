@@ -1,0 +1,23 @@
+digraph "MainWindow::MainWindow"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="MainWindow::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MainWindow::showAbout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MainWindow::quit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a542a7527ced73b2c9bc14f8dc9661a66"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MainWindow::genelateRandom\lNumber",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#a02558647ad7d371d5499604f2786e745"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="RandNumber::generate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_rand_number.html#ab713f0ef78330be54147ec3b6cba8b97"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="MainWindow::showWrongInput\lMessageBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#ab550cad5c29365827496dfe01bf5409b"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="MainWindow::clearRandNumber\lOutputBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#aace492103bfaa75559bbc06d0515156d"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="MainWindow::saveRandNumber\lOutput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_main_window.html#accff23bc469fc20a5b81250667124554"];
+}

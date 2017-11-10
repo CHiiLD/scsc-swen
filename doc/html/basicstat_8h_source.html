@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>scsc-swen: basicstat.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">scsc-swen
+   &#160;<span id="projectnumber">0.01</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">basicstat.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="basicstat_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BASICSTAT_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BASICSTAT_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_basic_stat.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_basic_stat.html">BasicStat</a></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_basic_stat.html#aed8ec3b5bb710e508c1381177eb2b7af">mean</a>(std::list&lt;double&gt; data, <span class="keywordtype">double</span>&amp; <a class="code" href="class_basic_stat.html#aed8ec3b5bb710e508c1381177eb2b7af">mean</a>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_basic_stat.html#a8f9136c78622bab441f265cad8e68cf0">variance</a>(std::list&lt;double&gt; data, <span class="keywordtype">double</span>&amp; <a class="code" href="class_basic_stat.html#a8f9136c78622bab441f265cad8e68cf0">variance</a>);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_basic_stat.html#abb6de0298ddccab2faa991ef3fd750be">stdDeviation</a>(std::list&lt;double&gt; data, <span class="keywordtype">double</span>&amp; deviation);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_basic_stat.html#afdb2333c23f3bae16da5ea1c3f7526e8">pecentile</a>(std::list&lt;double&gt; data, <span class="keywordtype">double</span> pth, <span class="keywordtype">double</span>&amp; value);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_basic_stat.html#ac3bd7e555b37fa0acfe67050918fe5f2">correlationCoefficient</a>(std::list&lt;double&gt; dataX, std::list&lt;double&gt; dataY, <span class="keywordtype">double</span>&amp; value);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_basic_stat.html#a205826e32aa25d75146442f49e0d2684">sumOfDeviationSquare</a>(std::list&lt;double&gt; data, <span class="keywordtype">double</span>&amp; value);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // BASICSTAT_H</span></div><div class="ttc" id="class_basic_stat_html_a205826e32aa25d75146442f49e0d2684"><div class="ttname"><a href="class_basic_stat.html#a205826e32aa25d75146442f49e0d2684">BasicStat::sumOfDeviationSquare</a></div><div class="ttdeci">static int sumOfDeviationSquare(std::list&lt; double &gt; data, double &amp;value)</div><div class="ttdoc">sumOfDeviationSquare 편차 제곱의 합 </div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8cpp_source.html#l00108">basicstat.cpp:108</a></div></div>
+<div class="ttc" id="class_basic_stat_html_abb6de0298ddccab2faa991ef3fd750be"><div class="ttname"><a href="class_basic_stat.html#abb6de0298ddccab2faa991ef3fd750be">BasicStat::stdDeviation</a></div><div class="ttdeci">static int stdDeviation(std::list&lt; double &gt; data, double &amp;deviation)</div><div class="ttdoc">stdDeviation 표준편차 </div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8cpp_source.html#l00026">basicstat.cpp:26</a></div></div>
+<div class="ttc" id="class_basic_stat_html"><div class="ttname"><a href="class_basic_stat.html">BasicStat</a></div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8h_source.html#l00006">basicstat.h:6</a></div></div>
+<div class="ttc" id="class_basic_stat_html_a8f9136c78622bab441f265cad8e68cf0"><div class="ttname"><a href="class_basic_stat.html#a8f9136c78622bab441f265cad8e68cf0">BasicStat::variance</a></div><div class="ttdeci">static int variance(std::list&lt; double &gt; data, double &amp;variance)</div><div class="ttdoc">variance 분산 </div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8cpp_source.html#l00016">basicstat.cpp:16</a></div></div>
+<div class="ttc" id="class_basic_stat_html_ac3bd7e555b37fa0acfe67050918fe5f2"><div class="ttname"><a href="class_basic_stat.html#ac3bd7e555b37fa0acfe67050918fe5f2">BasicStat::correlationCoefficient</a></div><div class="ttdeci">static int correlationCoefficient(std::list&lt; double &gt; dataX, std::list&lt; double &gt; dataY, double &amp;value)</div><div class="ttdoc">correlationCoefficient 상관계수 </div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8cpp_source.html#l00073">basicstat.cpp:73</a></div></div>
+<div class="ttc" id="class_basic_stat_html_aed8ec3b5bb710e508c1381177eb2b7af"><div class="ttname"><a href="class_basic_stat.html#aed8ec3b5bb710e508c1381177eb2b7af">BasicStat::mean</a></div><div class="ttdeci">static int mean(std::list&lt; double &gt; data, double &amp;mean)</div><div class="ttdoc">mean 평균 </div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8cpp_source.html#l00004">basicstat.cpp:4</a></div></div>
+<div class="ttc" id="class_basic_stat_html_afdb2333c23f3bae16da5ea1c3f7526e8"><div class="ttname"><a href="class_basic_stat.html#afdb2333c23f3bae16da5ea1c3f7526e8">BasicStat::pecentile</a></div><div class="ttdeci">static int pecentile(std::list&lt; double &gt; data, double pth, double &amp;value)</div><div class="ttdoc">pecentile 백분위수 </div><div class="ttdef"><b>Definition:</b> <a href="basicstat_8cpp_source.html#l00037">basicstat.cpp:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+다음에 의해 생성됨 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

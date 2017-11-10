@@ -1,0 +1,19 @@
+digraph "NullHypothesis::z_integration"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node76 [label="NullHypothesis::z_integration",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node76 -> Node77 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="NullHypothesis::critical\l_region1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#aab366022794f7b0c7dc4bad497824439"];
+  Node77 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e"];
+  Node78 -> Node79 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d"];
+  Node76 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="NullHypothesis::critical\l_region2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a9e0b0a492ad47ecc4f83e8556ced3585"];
+  Node80 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="NullHypothesis::critical\l_region3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#ae8f61ccce96e2d21add0241b3035f624"];
+  Node81 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

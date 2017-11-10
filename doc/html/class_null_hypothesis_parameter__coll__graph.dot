@@ -1,0 +1,6 @@
+digraph "NullHypothesisParameter"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{NullHypothesisParameter\n|- testStatistic\l- standardDeviation\l- dataSize\l- testValue\l- alpha\l- sign\l|+ NullHypothesisParameter()\l+ NullHypothesisParameter()\l+ getTestStatistic()\l+ setTestStatistic()\l+ getStandardDeviation()\l+ setStandardDeviation()\l+ getDataSize()\l+ setDataSize()\l+ getAlpha()\l+ setAlpha()\l+ getSign()\l+ setSign()\l+ getTestValue()\l+ setTestValue()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

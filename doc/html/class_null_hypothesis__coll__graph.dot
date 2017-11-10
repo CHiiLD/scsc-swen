@@ -1,0 +1,6 @@
+digraph "NullHypothesis"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{NullHypothesis\n||+ hyphothesis()\l+ hyphothesis()\l- student()\l- t_integration()\l- standard_normal()\l- z_integration()\l- critical_region1()\l- critical_region2()\l- critical_region3()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}
