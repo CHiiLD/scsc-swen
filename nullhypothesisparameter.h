@@ -1,5 +1,6 @@
 #ifndef NULLHYPOTHESISPARAMETER_H
 #define NULLHYPOTHESISPARAMETER_H
+#include <QString>
 
 enum class NullHypothesisSign
 {
@@ -35,12 +36,12 @@ public:
 
 private:
     /**
-     * @brief testStatistic 검정통계량
+     * @brief 검정통계량
      */
     double testStatistic;
 
     /**
-     * @brief standardDeviation 표본표쥰오차
+     * @brief 표본표쥰오차
      */
     double standardDeviation;
 
@@ -50,17 +51,17 @@ private:
     int dataSize;
 
     /**
-     * @brief testValue 검정값
+     * @brief 검정값
      */
     double testValue;
 
     /**
-     * @brief alpha 유의수준
+     * @brief 유의수준
      */
     double alpha;
 
     /**
-     * @brief sign H_1의 대립가설
+     * @brief 귀무가설의 기호
      */
     NullHypothesisSign sign;
 };

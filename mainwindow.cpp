@@ -1,9 +1,44 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "randnumgen.h"
+#include "basicstat.h"
+#include "nullhypothesis.h"
+
 #include <QStandardItemModel>
 #include <QMessageBox>
 #include <QFileDialog>
-#include "randnumgen.h"
+
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+
+#include <QtCharts/QScatterSeries>
+#include <QtCharts/QLegendMarker>
+#include <QtGui/QImage>
+#include <QtGui/QPainter>
+#include <QtCore/QtMath>
+
+#include <QTextStream>
+
+#define TABLEVIEW_ROW_MAX_SIZE 50000
+#define TERM_MEAN "평균"
+#define TERM_VARIANCE "분산"
+#define TERM_STD_DEVIATION "표준편차"
+#define TERM_25TH_PERCENTILE "제1분위수"
+#define TERM_50TH_PERCENTILE "제2사분위수(중앙값)"
+#define TERM_75TH_PERCENTILE "제3사분위수"
+#define TERM_CORRELATIONCOEFFICIENT "상관계수"
+#define TERM_X "X"
+#define TERM_Y "Y"
+#define TERM_FOUNDATION_STAT "기초통계량"
+#define TERM_DATASET "데이터 셋"
+//#define QT_NO_CAST_FROM_ASCII
+
+using namespace QtCharts;
+
+bool writeUnivariateStatOutput(std::list<double> data, QAbstractItemModel* model, int row);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -29,33 +64,51 @@ void MainWindow::init()
     connect(ui->pushButton_randGenInit, SIGNAL(clicked(bool)), this, SLOT(clearRandNumberOutputBox(bool)));
     connect(ui->pushButton_randGenSave, SIGNAL(clicked(bool)), this, SLOT(saveRandNumberOutput(bool)));
 
+    // 기초통계량 - 일변량 컴포넌트 이벤트를 연결합니다.
+    connect(ui->pushButton_univariateHistogram, SIGNAL(clicked(bool)), this, SLOT(showHistogram(bool)));
+    connect(ui->pushButton_univariateExecute, SIGNAL(clicked(bool)), this, SLOT(calcUnivariateData(bool)));
+    connect(ui->pushButton_univariateInit, SIGNAL(clicked(bool)), this, SLOT(clearUnivariateOutputBox(bool)));
+    connect(ui->pushButton_univariateSave, SIGNAL(clicked(bool)), this, SLOT(saveUnivariateOutput(bool)));
+
+    // 기초통계량 - 이변량 컴포넌트 이벤트를 연결합니다.
+    connect(ui->pushButton_bivarivateScatterPlot, SIGNAL(clicked(bool)), this, SLOT(showScatterPlot(bool)));
+    connect(ui->pushButton_bivarivateExecute, SIGNAL(clicked(bool)), this, SLOT(calcBivariateData(bool)));
+    connect(ui->pushButton_bivariateInit, SIGNAL(clicked(bool)), this, SLOT(clearBivariateOutputBox(bool)));
+    connect(ui->pushButton_bivariateSave, SIGNAL(clicked(bool)), this, SLOT(saveBivariateOutput(bool)));
+
+    connect(ui->pushButton_nullhypothesisExecute, SIGNAL(clicked(bool)), this, SLOT(judgeNullHypothesis(bool)));
+    connect(ui->pushButton_nullHypothesisInit, SIGNAL(clicked(bool)), this, SLOT(claerNullHypothesisOutputBox(bool)));
+
     // 일변량 데이터 입력 테이블뷰 설정
-    QStandardItemModel *model = new QStandardItemModel(50000,1,this);
-    model->setHorizontalHeaderItem(0, new QStandardItem(QString("X")));
+    QStandardItemModel *model = new QStandardItemModel(TABLEVIEW_ROW_MAX_SIZE,1,this);
+    model->setHorizontalHeaderItem(0, new QStandardItem(QString(TERM_X)));
     ui->tableView_univariateInput->setModel(model);
 
     // 일변량 출력 테이블뷰 설정
-    model = new QStandardItemModel(1,5,this);
-    model->setHorizontalHeaderItem(0, new QStandardItem(QString("평균")));
-    model->setHorizontalHeaderItem(1, new QStandardItem(QString("분산")));
-    model->setHorizontalHeaderItem(2, new QStandardItem(QString("중앙값")));
-    model->setHorizontalHeaderItem(3, new QStandardItem(QString("표준편차")));
-    model->setHorizontalHeaderItem(4, new QStandardItem(QString("사분위수")));
+    model = new QStandardItemModel(1,6,this);
+    model->setHorizontalHeaderItem(0, new QStandardItem(TERM_MEAN));
+    model->setHorizontalHeaderItem(1, new QStandardItem(TERM_VARIANCE));
+    model->setHorizontalHeaderItem(2, new QStandardItem(TERM_STD_DEVIATION));
+    model->setHorizontalHeaderItem(3, new QStandardItem(TERM_25TH_PERCENTILE));
+    model->setHorizontalHeaderItem(4, new QStandardItem(TERM_50TH_PERCENTILE));
+    model->setHorizontalHeaderItem(5, new QStandardItem(TERM_75TH_PERCENTILE));
     ui->tableView_univariateOutput->setModel(model);
 
     // 이변량 데이터 입력 테이블 뷰 설정
-    model = new QStandardItemModel(50000,2,this);
-    model->setHorizontalHeaderItem(0, new QStandardItem(QString("X")));
-    model->setHorizontalHeaderItem(1, new QStandardItem(QString("Y")));
+    model = new QStandardItemModel(TABLEVIEW_ROW_MAX_SIZE,2,this);
+    model->setHorizontalHeaderItem(0, new QStandardItem(QString(TERM_X)));
+    model->setHorizontalHeaderItem(1, new QStandardItem(QString(TERM_Y)));
     ui->tableView_bivariateInput->setModel(model);
 
-    // 변량 출력 테이블뷰 설정
-    model = new QStandardItemModel(2,5,this);
-    model->setHorizontalHeaderItem(0, new QStandardItem(QString("평균")));
-    model->setHorizontalHeaderItem(1, new QStandardItem(QString("분산")));
-    model->setHorizontalHeaderItem(2, new QStandardItem(QString("중앙값")));
-    model->setHorizontalHeaderItem(3, new QStandardItem(QString("표준편차")));
-    model->setHorizontalHeaderItem(4, new QStandardItem(QString("사분위수")));
+    // 이변량 출력 테이블뷰 설정
+    model = new QStandardItemModel(2,7,this);
+    model->setHorizontalHeaderItem(0, new QStandardItem(TERM_MEAN));
+    model->setHorizontalHeaderItem(1, new QStandardItem(TERM_VARIANCE));
+    model->setHorizontalHeaderItem(2, new QStandardItem(TERM_STD_DEVIATION));
+    model->setHorizontalHeaderItem(3, new QStandardItem(TERM_25TH_PERCENTILE));
+    model->setHorizontalHeaderItem(4, new QStandardItem(TERM_50TH_PERCENTILE));
+    model->setHorizontalHeaderItem(5, new QStandardItem(TERM_75TH_PERCENTILE));
+    model->setHorizontalHeaderItem(6, new QStandardItem(TERM_CORRELATIONCOEFFICIENT));
     ui->tableView_bivariateOutput->setModel(model);
 }
 
@@ -149,21 +202,440 @@ void MainWindow::clearRandNumberOutputBox(bool checked)
     ui->lineEdit_randGenOutputSize->clear();
 }
 
-void MainWindow::saveRandNumberOutput(bool checked)
+void MainWindow::saveToFile(QString text)
 {
-    QString text = ui->textEdit_randGenOutput->toPlainText();
-    QString fileName = QFileDialog::getSaveFileName(this, tr("데이터를 저장합니다"));
+    QString fileName = QFileDialog::getSaveFileName(this, "데이터를 저장합니다");
 
     if (fileName.isEmpty())
         return;
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly))
     {
-        QMessageBox::information(this, tr("Unable to open file"), file.errorString());
+        QMessageBox::information(this, "파일을 열 수 없습니다.", file.errorString());
         return;
     }
 
-    QDataStream out(&file);
-    out.setVersion(QDataStream::Qt_5_9);
-    out << text;
+    QTextStream stream(&file);
+    stream.setCodec("UTF-8");
+    stream << text;
+    file.close();
+}
+
+void MainWindow::saveRandNumberOutput(bool checked)
+{
+    QString text = ui->textEdit_randGenOutput->toPlainText();
+    saveToFile(text);
+}
+
+bool extractDataset(QAbstractItemModel* model, int col, std::list<double>& data)
+{
+    int row, rowCount = model->rowCount();
+    bool ok = false;
+    std::list<double> list;
+    // 공백을 만날 때까지 테이블뷰에서 데이터를 수집한다.
+    for(row = 0; row < rowCount; ++row)
+    {
+        QModelIndex index = model->index(row, col);
+        QVariant var = model->data(index);
+        if(!var.isValid() || var.toString().length() == 0) // 공백을 만난 경우
+            break;
+
+        double value = var.toDouble(&ok);
+        if(!ok) // 잘못된 데이터 입력을 감지
+            break;
+
+        list.push_back(value);
+    }
+    // 공백 이후에 데이터가 추가로 입력된 경우를 찾아서 잘못된 데이터 입력으로 처리
+    for(++row; row < rowCount; ++row)
+    {
+        QModelIndex index = model->index(row, col);
+        QVariant var = model->data(index);
+        if(var.isValid() && var.toString().length() != 0)
+        {
+            ok = false;
+            break;
+        }
+    }
+    if(ok)
+        data = list;
+    return ok;
+}
+
+QChartView* drawHistogram(std::list<double>& data, QString title = "", QString label = "")
+{
+    QStringList categories;
+    QBarSet *barset = new QBarSet(label);
+
+    int num = 0;
+    for(auto iter = data.begin(); iter != data.end(); ++iter)
+    {
+        *barset << *iter;
+        categories << QString::number(++num);
+    }
+
+    QBarSeries *series = new QBarSeries();
+    series->append(barset);
+
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    if(title.length() != 0)
+        chart->setTitle(title);
+    chart->setAnimationOptions(QChart::SeriesAnimations);
+
+    QBarCategoryAxis *axis = new QBarCategoryAxis();
+    axis->append(categories);
+    chart->createDefaultAxes();
+    chart->setAxisX(axis, series);
+
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    return chartView;
+}
+
+void MainWindow::showHistogram(bool checked)
+{
+    QAbstractItemModel* model = ui->tableView_univariateInput->model();
+    std::list<double> data;
+    bool ok = extractDataset(model, 0, data);
+
+    if(!ok)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    drawHistogram(data, "히스토그램", TERM_X)->show();
+}
+
+void MainWindow::calcUnivariateData(bool checked)
+{
+    QAbstractItemModel* model = ui->tableView_univariateInput->model();
+    std::list<double> data;
+    bool ok = extractDataset(model, 0, data);
+
+    if(!ok)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    model = ui->tableView_univariateOutput->model();
+    if(!writeUnivariateStatOutput(data, model, 0))
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+}
+
+void MainWindow::clearUnivariateOutputBox(bool checked)
+{
+    QStandardItemModel* model = (QStandardItemModel*) ui->tableView_univariateInput->model();
+    model->setRowCount(0);
+    model->setRowCount(TABLEVIEW_ROW_MAX_SIZE);
+    model = (QStandardItemModel*) ui->tableView_univariateOutput->model();
+    model->setRowCount(0);
+    model->setRowCount(1);
+}
+
+void MainWindow::saveUnivariateOutput(bool checked)
+{
+    QString text;
+    QAbstractItemModel* model = ui->tableView_univariateInput->model();
+    std::list<double> data;
+    bool ok = extractDataset(model, 0, data);
+
+    if(!ok)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    model = ui->tableView_univariateOutput->model();
+    QString mean = model->data(model->index(0, 0)).toString();
+    QString variance =model->data(model->index(0, 1)).toString();
+    QString std =model->data(model->index(0, 2)).toString();
+    QString q1 =model->data(model->index(0, 3)).toString();
+    QString q2 =model->data(model->index(0, 4)).toString();
+    QString q3 =model->data(model->index(0, 5)).toString();
+
+    QString split = " : ";
+    QString newline = "\n";
+    // 기초통계량 정보
+    text.append(TERM_FOUNDATION_STAT).append(newline);
+    text.append(TERM_MEAN).append(split).append(mean).append(newline);
+    text.append(TERM_VARIANCE).append(split).append(variance).append(newline);
+    text.append(TERM_STD_DEVIATION).append(split).append(std).append(newline);
+    text.append(TERM_25TH_PERCENTILE).append(split).append(q1).append(newline);
+    text.append(TERM_50TH_PERCENTILE).append(split).append(q2).append(newline);
+    text.append(TERM_75TH_PERCENTILE).append(split).append(q3).append(newline);
+
+    text.append(newline);
+    // X데이터 셋
+    text.append(TERM_X).append(TERM_DATASET).append(newline);
+    for(auto iter = data.begin(); iter != data.end(); ++iter)
+        text.append(QString::number(*iter)).append(newline);
+    text.remove(text.length() -1, 1); //마지막 개행문자 삭제
+    saveToFile(text);
+}
+
+QChartView* drawScatterPlot(std::list<double>& dataX, std::list<double>& dataY, QString title = "", QString seriesName = "")
+{
+    double minX = *std::min_element(dataX.begin(), dataX.end());
+    double maxX = *std::max_element(dataX.begin(), dataX.end());
+    double minY = *std::min_element(dataY.begin(), dataY.end());
+    double maxY = *std::max_element(dataY.begin(), dataY.end());
+    double axisXmin = minX - 1.0;
+    double axisXmax = maxX + 1.0;
+    double axisYmin = minY - 1.0;
+    double axisYmax = maxY + 1.0;
+    if(minX != maxX)
+    {
+        axisXmin = minX - (abs(maxX - minX) * 0.1);
+        axisXmax = maxX + (abs(maxX - minX) * 0.1);
+    }
+    if(minY != maxY)
+    {
+        axisYmin = minY - (abs(maxY - minY) * 0.1);
+        axisYmax = maxY + (abs(maxY - minY) * 0.1);
+    }
+
+    QScatterSeries *series = new QScatterSeries();
+    series->setName(seriesName);
+    series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
+    series->setMarkerSize(12.0);
+
+    std::list<double>::iterator iterX, iterY;
+    for(int i = 0; i < dataX.size(); ++i)
+    {
+        iterX = dataX.begin();
+        iterY = dataY.begin();
+        std::advance(iterX, i);
+        std::advance(iterY, i);
+        series->append(*iterX, *iterY);
+    }
+
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle(title);
+    chart->createDefaultAxes();
+    chart->setDropShadowEnabled(false);
+    chart->legend()->setMarkerShape(QLegend::MarkerShapeCircle);
+    chart->axisX()->setRange(axisXmin, axisXmax);
+    chart->axisY()->setRange(axisYmin, axisYmax);
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    return chartView;
+}
+
+void MainWindow::showScatterPlot(bool checked)
+{
+    QAbstractItemModel* model = ui->tableView_bivariateInput->model();
+    std::list<double> dataX, dataY;
+    double cc;
+    bool ok = extractDataset(model, 0, dataX);
+    ok &= extractDataset(model, 1, dataY);
+    if(!ok || BasicStat::correlationCoefficient(dataX, dataY, cc) != OK)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    drawScatterPlot(dataX, dataY, "산점도", "데이터")->show();
+}
+
+bool writeUnivariateStatOutput(std::list<double> data, QAbstractItemModel* model, int row)
+{
+    double mean, variance, std, q1, q2, q3;
+
+    int ret = BasicStat::mean(data, mean);
+    ret |= BasicStat::variance(data, variance);
+    ret |= BasicStat::standardDeviation(data, std);
+    ret |= BasicStat::pecentile(data, 0.25, q1);
+    ret |= BasicStat::pecentile(data, 0.5, q2);
+    ret |= BasicStat::pecentile(data, 0.75, q3);
+
+    if(ret != OK)
+        return false;
+
+    model->setData(model->index(row, 0), mean);
+    model->setData(model->index(row, 1), variance);
+    model->setData(model->index(row, 2), std);
+    model->setData(model->index(row, 3), q1);
+    model->setData(model->index(row, 4), q2);
+    model->setData(model->index(row, 5), q3);
+
+    return true;
+}
+
+void MainWindow::calcBivariateData(bool checked)
+{
+    QAbstractItemModel* model = ui->tableView_bivariateInput->model();
+    std::list<double> dataX, dataY;
+    double cc;
+    bool ok = extractDataset(model, 0, dataX);
+    ok &= extractDataset(model, 1, dataY);
+    if(!ok || BasicStat::correlationCoefficient(dataX, dataY, cc) != OK)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    model = ui->tableView_bivariateOutput->model();
+    if(!writeUnivariateStatOutput(dataX, model, 0))
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+    if(!writeUnivariateStatOutput(dataY, model, 1))
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+    //상관계수 입력
+    model->setData(model->index(0, 6), cc);
+    model->setData(model->index(1, 6), cc);
+}
+
+void MainWindow::clearBivariateOutputBox(bool checked)
+{
+    QStandardItemModel* model = (QStandardItemModel*) ui->tableView_bivariateInput->model();
+    model->setRowCount(0);
+    model->setRowCount(TABLEVIEW_ROW_MAX_SIZE);
+    model = (QStandardItemModel*) ui->tableView_bivariateOutput->model();
+    model->setRowCount(0);
+    model->setRowCount(2);
+}
+
+void MainWindow::saveBivariateOutput(bool checked)
+{
+    QString text;
+    QAbstractItemModel* model = ui->tableView_bivariateInput->model();
+    std::list<double> dataX, dataY;
+    double cc;
+    bool ok = extractDataset(model, 0, dataX);
+    ok &= extractDataset(model, 1, dataY);
+    if(!ok || BasicStat::correlationCoefficient(dataX, dataY, cc) != OK)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    model = ui->tableView_bivariateOutput->model();
+    QString dataName[] = {TERM_X, TERM_Y};
+    QString split = " : ";
+    QString newline = "\n";
+    QString space = " ";
+    for(int row = 0; row < 2; ++row)
+    {
+        QString mean = model->data(model->index(row, 0)).toString();
+        QString variance =model->data(model->index(row, 1)).toString();
+        QString std =model->data(model->index(row, 2)).toString();
+        QString q1 =model->data(model->index(row, 3)).toString();
+        QString q2 =model->data(model->index(row, 4)).toString();
+        QString q3 =model->data(model->index(row, 5)).toString();
+
+        text.append(dataName[row]).append(space).append(TERM_FOUNDATION_STAT).append(newline);
+        text.append(TERM_MEAN).append(split).append(mean).append(newline);
+        text.append(TERM_VARIANCE).append(split).append(variance).append(newline);
+        text.append(TERM_STD_DEVIATION).append(split).append(std).append(newline);
+        text.append(TERM_25TH_PERCENTILE).append(split).append(q1).append(newline);
+        text.append(TERM_50TH_PERCENTILE).append(split).append(q2).append(newline);
+        text.append(TERM_75TH_PERCENTILE).append(split).append(q3).append(newline);
+        text.append(newline);
+    }
+    QString corr =model->data(model->index(0, 6)).toString(); //상관계수
+    text.append(TERM_CORRELATIONCOEFFICIENT).append(split).append(corr).append(newline);
+    text.append(newline);
+
+    // X:Y데이터 셋
+    text.append(TERM_X).append(split).append(TERM_Y).append(space).append(TERM_DATASET).append(newline);
+    std::list<double>::iterator iterX, iterY;
+    for(int i = 0; i < dataX.size(); ++i)
+    {
+        iterX = dataX.begin();
+        iterY = dataY.begin();
+        std::advance(iterX, i);
+        std::advance(iterY, i);
+        text.append(QString::number(*iterX)).append(space).append(QString::number(*iterY)).append(newline);
+    }
+
+    text.remove(text.length() -1, 1); //마지막 개행문자 삭제
+    saveToFile(text);
+}
+
+void MainWindow::judgeNullHypothesis(bool checked)
+{
+    QString sTestStatistic = ui->lineEdit_nullHypothesisTestStatistic->text();
+    QString sStdDevation = ui->lineEdit_nullHypothesisStdDeviation->text();
+    QString sSize = ui->lineEdit_nullHypothesisSize->text();
+    QString sTestValue = ui->lineEdit_nullHypothesisTestValue->text();
+    QString sAlpha = ui->lineEdit_nullHypothesisAlpha->text();
+    QString sSign = ui->comboBox_sign->currentText();
+    double testStatistic, stdDevation, testValue, alpha;
+    int size;
+    NullHypothesisSign sign = NullHypothesisSign::NONE;
+    bool ok = false;
+    do
+    {
+        testStatistic = sTestStatistic.toDouble(&ok);
+        if(!ok) break;
+        stdDevation = sStdDevation.toDouble(&ok);
+        if(!ok) break;
+        testValue = sTestValue.toDouble(&ok);
+        if(!ok) break;
+        alpha = sAlpha.toDouble(&ok);
+        if(!ok) break;
+        size = sSize.toInt(&ok);
+        if(!ok) break;
+    } while(false);
+
+
+
+    QString nein = "≠", less = ">", greater = "<";
+    if(sSign.compare(nein) == 0)
+        sign = NullHypothesisSign::NOT_EQUAL;
+    else if (sSign.compare(less))
+        sign = NullHypothesisSign::LESS_THEN;
+    else if (sSign.compare(greater))
+        sign = NullHypothesisSign::GREATER_THEN;
+
+    if(!ok || sign == NullHypothesisSign::NONE)
+    {
+        showWrongInputMessageBox();
+        return;
+    }
+
+    int ret = NullHypothesis::hyphothesis(testStatistic, stdDevation, size, testValue, alpha, sign);
+    QString text;
+    text.append("α=");
+    text.append(QString::number(alpha));
+    text.append("에서 귀무가설을 ");
+    switch (ret)
+    {
+    case NULL_HYPOTHESIS_REJECT_SECCESS:
+        text.append("기각한다.");
+        break;
+    case NULL_HYPOTHESIS_REJECT_FAIL:
+        text.append("기각 할 수 없다.");
+        break;
+    default:
+        showWrongInputMessageBox();
+        return;
+    }
+    ui->textEdit_nullHypothesisOutput->setText(text);
+}
+
+void MainWindow::claerNullHypothesisOutputBox(bool checked)
+{
+    ui->lineEdit_nullHypothesisTestStatistic->clear();
+    ui->lineEdit_nullHypothesisStdDeviation->clear();
+    ui->lineEdit_nullHypothesisSize->clear();
+    ui->lineEdit_nullHypothesisTestValue->clear();
+    ui->lineEdit_nullHypothesisAlpha->clear();
+    ui->textEdit_nullHypothesisOutput->clear();
 }

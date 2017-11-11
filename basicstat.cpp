@@ -23,7 +23,7 @@ int BasicStat::variance(std::list<double> data, double& variance)
     return 0;
 }
 
-int BasicStat::stdDeviation(std::list<double> data, double& deviation)
+int BasicStat::standardDeviation(std::list<double> data, double& deviation)
 {
     double variance;
 

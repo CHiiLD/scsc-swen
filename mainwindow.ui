@@ -20,7 +20,7 @@
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -173,7 +173,7 @@
           <item>
            <widget class="QTabWidget" name="tabWidget_2">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="tab_4">
              <attribute name="title">
@@ -207,14 +207,14 @@
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_7">
                       <item>
-                       <widget class="QPushButton" name="pushButton_7">
+                       <widget class="QPushButton" name="pushButton_univariateHistogram">
                         <property name="text">
                          <string>히스토그램으로 보기</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QPushButton" name="pushButton_6">
+                       <widget class="QPushButton" name="pushButton_univariateExecute">
                         <property name="text">
                          <string>실행</string>
                         </property>
@@ -259,14 +259,14 @@
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QPushButton" name="pushButton_4">
+                     <widget class="QPushButton" name="pushButton_univariateInit">
                       <property name="text">
                        <string>초기화</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_3">
+                     <widget class="QPushButton" name="pushButton_univariateSave">
                       <property name="text">
                        <string>결과를 저장</string>
                       </property>
@@ -310,14 +310,14 @@
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QPushButton" name="pushButton_9">
+                     <widget class="QPushButton" name="pushButton_bivarivateScatterPlot">
                       <property name="text">
                        <string>산점도로 보기</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_8">
+                     <widget class="QPushButton" name="pushButton_bivarivateExecute">
                       <property name="text">
                        <string>실행</string>
                       </property>
@@ -360,14 +360,14 @@
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QPushButton" name="pushButton_11">
+                     <widget class="QPushButton" name="pushButton_bivariateInit">
                       <property name="text">
                        <string>초기화</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_10">
+                     <widget class="QPushButton" name="pushButton_bivariateSave">
                       <property name="text">
                        <string>결과를 저장</string>
                       </property>
@@ -408,7 +408,7 @@
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLineEdit" name="lineEdit_4"/>
+                  <widget class="QLineEdit" name="lineEdit_nullHypothesisTestStatistic"/>
                  </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_5">
@@ -418,7 +418,7 @@
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit_5"/>
+                  <widget class="QLineEdit" name="lineEdit_nullHypothesisStdDeviation"/>
                  </item>
                  <item row="3" column="0">
                   <widget class="QLabel" name="label_6">
@@ -428,7 +428,7 @@
                   </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QLineEdit" name="lineEdit_6"/>
+                  <widget class="QLineEdit" name="lineEdit_nullHypothesisSize"/>
                  </item>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_7">
@@ -438,7 +438,7 @@
                   </widget>
                  </item>
                  <item row="4" column="1">
-                  <widget class="QLineEdit" name="lineEdit_7"/>
+                  <widget class="QLineEdit" name="lineEdit_nullHypothesisTestValue"/>
                  </item>
                  <item row="5" column="0">
                   <widget class="QLabel" name="label_8">
@@ -448,7 +448,7 @@
                   </widget>
                  </item>
                  <item row="5" column="1">
-                  <widget class="QLineEdit" name="lineEdit_8"/>
+                  <widget class="QLineEdit" name="lineEdit_nullHypothesisAlpha"/>
                  </item>
                  <item row="6" column="0">
                   <widget class="QLabel" name="label_9">
@@ -458,7 +458,7 @@
                   </widget>
                  </item>
                  <item row="6" column="1">
-                  <widget class="QComboBox" name="comboBox">
+                  <widget class="QComboBox" name="comboBox_sign">
                    <item>
                     <property name="text">
                      <string>≠</string>
@@ -494,7 +494,7 @@
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QPushButton" name="pushButton_12">
+                   <widget class="QPushButton" name="pushButton_nullhypothesisExecute">
                     <property name="text">
                      <string>실행</string>
                     </property>
@@ -519,7 +519,7 @@
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_17">
                <item>
-                <widget class="QTextEdit" name="textEdit_2"/>
+                <widget class="QTextEdit" name="textEdit_nullHypothesisOutput"/>
                </item>
                <item alignment="Qt::AlignRight">
                 <widget class="QWidget" name="widget_8" native="true">
@@ -537,7 +537,7 @@
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QPushButton" name="pushButton_14">
+                   <widget class="QPushButton" name="pushButton_nullHypothesisInit">
                     <property name="text">
                      <string>초기화</string>
                     </property>
