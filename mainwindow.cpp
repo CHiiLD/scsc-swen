@@ -10,21 +10,6 @@
 
 #include <QStandardItemModel>
 #include <QMessageBox>
-#include <QFileDialog>
-
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-
-#include <QtCharts/QScatterSeries>
-#include <QtCharts/QLegendMarker>
-#include <QtGui/QImage>
-#include <QtGui/QPainter>
-#include <QtCore/QtMath>
-
-#include <QTextStream>
 
 #define TABLEVIEW_ROW_MAX_SIZE 50000
 #define TERM_MEAN "평균"
@@ -38,7 +23,6 @@
 #define TERM_Y "Y"
 #define TERM_FOUNDATION_STAT "기초통계량"
 #define TERM_DATASET "데이터 셋"
-#define ROUND(x,dig) (floor((x)*pow(10,dig)+0.5)/pow(10,dig))
 
 using namespace QtCharts;
 
@@ -372,12 +356,12 @@ bool writeUnivariateStatOutput(dataset data, QAbstractItemModel* model, int row)
     if(ret != OK)
         return false;
 
-    model->setData(model->index(row, 0), ROUND(mean, 2));
-    model->setData(model->index(row, 1), ROUND(variance, 2));
-    model->setData(model->index(row, 2), ROUND(std, 2));
-    model->setData(model->index(row, 3), ROUND(q1, 2));
-    model->setData(model->index(row, 4), ROUND(q2, 2));
-    model->setData(model->index(row, 5), ROUND(q3, 2));
+    model->setData(model->index(row, 0), QString::number(mean, 'f', 2));
+    model->setData(model->index(row, 1), QString::number(variance, 'f',2));
+    model->setData(model->index(row, 2), QString::number(std, 'f',2));
+    model->setData(model->index(row, 3), QString::number(q1, 'f', 2));
+    model->setData(model->index(row, 4), QString::number(q2, 'f', 2));
+    model->setData(model->index(row, 5), QString::number(q3, 'f', 2));
 
     return true;
 }
@@ -402,8 +386,8 @@ void MainWindow::calcBivariateData(bool checked)
         return;
     }
     //상관계수 입력
-    model->setData(model->index(0, 6), ROUND(cc, 2));
-    model->setData(model->index(1, 6), ROUND(cc, 2));
+    model->setData(model->index(0, 6), QString::number(cc, 'f', 2));
+    model->setData(model->index(1, 6), QString::number(cc, 'f', 2));
 }
 
 void MainWindow::clearBivariateData(bool checked)
