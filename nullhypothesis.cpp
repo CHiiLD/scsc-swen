@@ -71,7 +71,7 @@ double NullHypothesis::critical_region3(int n, double alpha)	// 기각역(!=일�
 }
 
 // 가설검정
-int NullHypothesis::hyphothesis(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign)
+int NullHypothesis::hyphothesis(double mean, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign)
 {	// avg:표본평균,std:표본표준편차,n:표본개수,mu_zero:가설에서 비교하고 싶은 평균값,alpha=: 귀무가설이 참일 때 귀무가설을 기각하는 오류를 범할 확률(유의수준),sign:<,>,!=
     if(dataSize < 1)
         return -1;
@@ -80,7 +80,7 @@ int NullHypothesis::hyphothesis(double testStatistic, double standardDeviation, 
         return -1;
 
     int result;
-    double test_statistic = (testStatistic - testValue) / (standardDeviation / sqrt(dataSize));// 검정 통계량
+    double test_statistic = (mean - testValue) / (standardDeviation / sqrt(dataSize));// 검정 통계량
 
     switch (sign)
     {
@@ -102,11 +102,11 @@ int NullHypothesis::hyphothesis(double testStatistic, double standardDeviation, 
 
 int NullHypothesis::hyphothesis(NullHypothesisParameter parameter)
 {
-    double xbar = parameter.getTestStatistic();
+    double mean = parameter.getMean();
     double std = parameter.getStandardDeviation();
     int n = parameter.getDataSize();
     double tValue = parameter.getTestValue();
     double alpha = parameter.getAlpha();
     NullHypothesisSign sign = parameter.getSign();
-    return hyphothesis(xbar, std, n, tValue, alpha, sign);
+    return hyphothesis(mean, std, n, tValue, alpha, sign);
 }

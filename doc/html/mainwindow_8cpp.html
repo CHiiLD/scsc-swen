@@ -73,6 +73,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="nullhypothesis_8h_source.html">nullhypothesis.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="statchart_8h_source.html">statchart.h</a>&quot;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;QStandardItemModel&gt;</code><br />
 <code>#include &lt;QMessageBox&gt;</code><br />
 <code>#include &lt;QFileDialog&gt;</code><br />
@@ -92,15 +93,15 @@ Include dependency graph for mainwindow.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="mainwindow_8cpp__incl.png" border="0" usemap="#mainwindow_8cpp" alt=""/></div>
 <map name="mainwindow_8cpp" id="mainwindow_8cpp">
-<area shape="rect" id="node2" href="mainwindow_8h.html" title="mainwindow.h" alt="" coords="81,79,187,104"/>
-<area shape="rect" id="node6" href="randnumgen_8h.html" title="randnumgen.h" alt="" coords="356,79,464,104"/>
-<area shape="rect" id="node9" href="basicstat_8h.html" title="basicstat.h" alt="" coords="487,79,573,104"/>
-<area shape="rect" id="node10" href="nullhypothesis_8h.html" title="nullhypothesis.h" alt="" coords="754,79,871,104"/>
-<area shape="rect" id="node14" href="save_8h.html" title="save.h" alt="" coords="896,79,956,104"/>
-<area shape="rect" id="node16" href="statchart_8h.html" title="statchart.h" alt="" coords="596,79,680,104"/>
-<area shape="rect" id="node8" href="swen_8h.html" title="swen.h" alt="" coords="462,152,526,177"/>
-<area shape="rect" id="node11" href="nullhypothesisparameter_8h.html" title="nullhypothesisparameter.h" alt="" coords="731,152,908,177"/>
-<area shape="rect" id="node13" href="aprint_8h.html" title="aprint.h" alt="" coords="832,225,898,251"/>
+<area shape="rect" id="node2" href="mainwindow_8h.html" title="mainwindow.h" alt="" coords="99,79,204,104"/>
+<area shape="rect" id="node6" href="randnumgen_8h.html" title="randnumgen.h" alt="" coords="374,79,481,104"/>
+<area shape="rect" id="node9" href="basicstat_8h.html" title="basicstat.h" alt="" coords="505,79,590,104"/>
+<area shape="rect" id="node10" href="nullhypothesis_8h.html" title="nullhypothesis.h" alt="" coords="772,79,889,104"/>
+<area shape="rect" id="node14" href="save_8h.html" title="save.h" alt="" coords="913,79,974,104"/>
+<area shape="rect" id="node16" href="statchart_8h.html" title="statchart.h" alt="" coords="614,79,697,104"/>
+<area shape="rect" id="node8" href="swen_8h.html" title="swen.h" alt="" coords="480,152,543,177"/>
+<area shape="rect" id="node11" href="nullhypothesisparameter_8h.html" title="nullhypothesisparameter.h" alt="" coords="748,152,925,177"/>
+<area shape="rect" id="node13" href="aprint_8h.html" title="aprint.h" alt="" coords="759,225,824,251"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -130,6 +131,8 @@ Macros</h2></td></tr>
 <tr class="separator:a83f16b43de8e917530943b4a93ad42fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5dc35fbf222e6d9db8583249cfab91a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#af5dc35fbf222e6d9db8583249cfab91a">TERM_DATASET</a>&#160;&#160;&#160;&quot;데이터 셋&quot;</td></tr>
 <tr class="separator:af5dc35fbf222e6d9db8583249cfab91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd4f2438483820a4287fab516245f58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#a7bd4f2438483820a4287fab516245f58">ROUND</a>(x,  dig)&#160;&#160;&#160;(floor((x)*pow(10,dig)+0.5)/pow(10,dig))</td></tr>
+<tr class="separator:a7bd4f2438483820a4287fab516245f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -139,6 +142,34 @@ Functions</h2></td></tr>
 <tr class="separator:aec57b33b02b04491b2c42bb7654bf203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7bd4f2438483820a4287fab516245f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd4f2438483820a4287fab516245f58">&#9670;&nbsp;</a></span>ROUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROUND</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">dig&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(floor((x)*pow(10,dig)+0.5)/pow(10,dig))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa3821f7d14c4aff0ab30f75c01044b1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa3821f7d14c4aff0ab30f75c01044b1d">&#9670;&nbsp;</a></span>TABLEVIEW_ROW_MAX_SIZE</h2>
 

@@ -32,14 +32,14 @@ private:
    /**
     * @brief 정규분포 함수를 계산합니다
     * @param z 확률변수
-    * @return 정구본포값
+    * @return 정규본포값
     */
    static double standard_normal(double z);
 
    /**
     * @brief 정규분포의 백분위수를 계산합니다.
     * @param alpha 유의수준
-    * @return 정규분포의 백분위수값
+    * @return 정규분포의 백분위수
     */
    static double z_integration(double alpha);
 
@@ -69,15 +69,15 @@ private:
 public:
     /**
      * @brief 가설검정을 수행합니다.
-     * @param testStatistic 검정통계량
-     * @param standardDeviation 표준편차
+     * @param mean 표본평균
+     * @param standardDeviation 표본표준편차
      * @param dataSize 표본개수
      * @param testValue 검정값
      * @param alpha 유의수준, 0.0~1.0 사이의 값을 가집니다.
      * @param sign 부호
      * @return 기각(NULL_HYPOTHESIS_REJECT_SECCESS)과 기각실패(NULL_HYPOTHESIS_REJECT_FAIL)의 결과를 반환합니다. 잘못된 매개변수의 입력 시 -1(error)을 반환합니다.
      */
-    static int hyphothesis(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign);
+    static int hyphothesis(double mean, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign);
 
     /**
      * @brief 가설검정을 수행합니다.

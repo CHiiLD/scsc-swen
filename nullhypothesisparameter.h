@@ -22,10 +22,10 @@ class NullHypothesisParameter : public Print
 {
 public:
     NullHypothesisParameter();
-    NullHypothesisParameter(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign);
+    NullHypothesisParameter(double mean, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign);
 
-    double getTestStatistic() const;
-    void setTestStatistic(double value);
+    double getMean() const;
+    void setMean(double value);
 
     double getStandardDeviation() const;
     void setStandardDeviation(double value);
@@ -49,12 +49,12 @@ public:
 
 private:
     /**
-     * @brief 검정통계량
+     * @brief 표본평균
      */
-    double testStatistic;
+    double mean;
 
     /**
-     * @brief 표본표쥰오차
+     * @brief 표본표준편차
      */
     double standardDeviation;
 

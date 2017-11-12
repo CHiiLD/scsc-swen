@@ -20,7 +20,7 @@ public:
     static QtCharts::QChartView* histogram(dataset& data, QString title = "", QString label = "");
 
     /**
-     * @brief 이변량 데이터의 다중산점돌르 qchart로 작성합니다.
+     * @brief 이변량 데이터의 산점도를 qchart로 작성합니다.
      * @param dataX X 데이터셋
      * @param dataY Y 데이터셋
      * @param title 타이틀

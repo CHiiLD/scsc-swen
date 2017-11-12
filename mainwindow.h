@@ -57,7 +57,7 @@ private slots:
     void genelateRandomNumber(bool checked);
 
     /**
-     * @brief 난수생성 관련 eidt컴포넌트를 초기화합니다.
+     * @brief 난수생성 관련 edit컴포넌트를 초기화합니다.
      * @param checked
      */
     void clearRandNumberData(bool checked);

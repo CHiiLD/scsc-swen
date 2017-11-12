@@ -2,25 +2,25 @@
 #include <QDebug>
 
 NullHypothesisParameter::NullHypothesisParameter() :
-    testStatistic(0), standardDeviation(0), dataSize(0), testValue(0), alpha(0), sign(NullHypothesisSign::NONE)
+    mean(0), standardDeviation(0), dataSize(0), testValue(0), alpha(0), sign(NullHypothesisSign::NONE)
 {
 
 }
 
 NullHypothesisParameter::NullHypothesisParameter(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign) :
-    testStatistic(testStatistic), standardDeviation(standardDeviation), dataSize(dataSize), testValue(testValue), alpha(alpha), sign(sign)
+    mean(testStatistic), standardDeviation(standardDeviation), dataSize(dataSize), testValue(testValue), alpha(alpha), sign(sign)
 {
 
 }
 
-double NullHypothesisParameter::getTestStatistic() const
+double NullHypothesisParameter::getMean() const
 {
-    return testStatistic;
+    return mean;
 }
 
-void NullHypothesisParameter::setTestStatistic(double value)
+void NullHypothesisParameter::setMean(double value)
 {
-    testStatistic = value;
+    mean = value;
 }
 
 double NullHypothesisParameter::getStandardDeviation() const
@@ -76,7 +76,7 @@ void NullHypothesisParameter::setTestValue(double value)
 void NullHypothesisParameter::print()
 {
     Print::print();
-    qDebug() << "test statistic: " << testStatistic;
+    qDebug() << "mean: " << mean;
     qDebug() << "standard deviation: " << standardDeviation;
     qDebug() << "alpha: " << alpha;
     qDebug() << "test value: " << testValue;

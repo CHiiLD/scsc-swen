@@ -80,9 +80,9 @@ Collaboration diagram for NullHypothesis:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a180da3004e312f04ecad408ed72c359e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e">hyphothesis</a> (double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, <a class="el" href="nullhypothesisparameter_8h.html#aaa9929d59c7880628a3f3658a56a0411">NullHypothesisSign</a> sign)</td></tr>
-<tr class="memdesc:a180da3004e312f04ecad408ed72c359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">가설검정을 수행합니다.  <a href="#a180da3004e312f04ecad408ed72c359e">More...</a><br /></td></tr>
-<tr class="separator:a180da3004e312f04ecad408ed72c359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f955a7efcdc026553ac0e7d009ea9b9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_null_hypothesis.html#a2f955a7efcdc026553ac0e7d009ea9b9">hyphothesis</a> (double mean, double standardDeviation, int dataSize, double testValue, double alpha, <a class="el" href="nullhypothesisparameter_8h.html#aaa9929d59c7880628a3f3658a56a0411">NullHypothesisSign</a> sign)</td></tr>
+<tr class="memdesc:a2f955a7efcdc026553ac0e7d009ea9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">가설검정을 수행합니다.  <a href="#a2f955a7efcdc026553ac0e7d009ea9b9">More...</a><br /></td></tr>
+<tr class="separator:a2f955a7efcdc026553ac0e7d009ea9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a174eefddec16be350423e01a3bb5025d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d">hyphothesis</a> (<a class="el" href="class_null_hypothesis_parameter.html">NullHypothesisParameter</a> parameter)</td></tr>
 <tr class="memdesc:a174eefddec16be350423e01a3bb5025d"><td class="mdescLeft">&#160;</td><td class="mdescRight">가설검정을 수행합니다.  <a href="#a174eefddec16be350423e01a3bb5025d">More...</a><br /></td></tr>
 <tr class="separator:a174eefddec16be350423e01a3bb5025d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,8 +252,8 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a180da3004e312f04ecad408ed72c359e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a180da3004e312f04ecad408ed72c359e">&#9670;&nbsp;</a></span>hyphothesis() <span class="overload">[1/2]</span></h2>
+<a id="a2f955a7efcdc026553ac0e7d009ea9b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f955a7efcdc026553ac0e7d009ea9b9">&#9670;&nbsp;</a></span>hyphothesis() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +265,7 @@ Static Private Member Functions</h2></td></tr>
           <td class="memname">int NullHypothesis::hyphothesis </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>testStatistic</em>, </td>
+          <td class="paramname"><em>mean</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -313,8 +313,8 @@ Static Private Member Functions</h2></td></tr>
 <p>가설검정을 수행합니다. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">testStatistic</td><td>검정통계량 </td></tr>
-    <tr><td class="paramname">standardDeviation</td><td>표준편차 </td></tr>
+    <tr><td class="paramname">mean</td><td>표본평균 </td></tr>
+    <tr><td class="paramname">standardDeviation</td><td>표본표준편차 </td></tr>
     <tr><td class="paramname">dataSize</td><td>표본개수 </td></tr>
     <tr><td class="paramname">testValue</td><td>검정값 </td></tr>
     <tr><td class="paramname">alpha</td><td>유의수준, 0.0~1.0 사이의 값을 가집니다. </td></tr>
@@ -392,7 +392,7 @@ Static Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>정구본포값 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>정규본포값 </dd></dl>
 
 </div>
 </div>
@@ -519,7 +519,7 @@ Static Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>정규분포의 백분위수값 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>정규분포의 백분위수 </dd></dl>
 
 </div>
 </div>
