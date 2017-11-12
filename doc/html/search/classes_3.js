@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['randnumber',['RandNumber',['../class_rand_number.html',1,'']]]
+  ['nullhypothesis',['NullHypothesis',['../class_null_hypothesis.html',1,'']]],
+  ['nullhypothesisparameter',['NullHypothesisParameter',['../class_null_hypothesis_parameter.html',1,'']]]
 ];

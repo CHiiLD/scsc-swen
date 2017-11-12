@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>scsc-swen: statchart.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">scsc-swen
+   &#160;<span id="projectnumber">0.01</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">statchart.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="statchart_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STATCHART_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define STATCHART_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QtCharts/QChartView&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="swen_8h.html">swen.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_stat_chart.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_stat_chart.html">StatChart</a></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">static</span> QtCharts::QChartView* <a class="code" href="class_stat_chart.html#a053fe2e9fe5838a554a2059f2cc7e0ad">histogram</a>(<a class="code" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a>&amp; data, QString title = <span class="stringliteral">&quot;&quot;</span>, QString label = <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> QtCharts::QChartView* <a class="code" href="class_stat_chart.html#ae83b109d2fcaa93fa27003286c86a987">scatterPlot</a>(<a class="code" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a>&amp; dataX, <a class="code" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a>&amp; dataY, QString title = <span class="stringliteral">&quot;&quot;</span>, QString label = <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // STATCHART_H</span></div><div class="ttc" id="swen_8h_html"><div class="ttname"><a href="swen_8h.html">swen.h</a></div></div>
+<div class="ttc" id="swen_8h_html_ac97537eed34e9d6f3395c62fb6494820"><div class="ttname"><a href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a></div><div class="ttdeci">std::list&lt; double &gt; dataset</div><div class="ttdef"><b>Definition:</b> <a href="swen_8h_source.html#l00008">swen.h:8</a></div></div>
+<div class="ttc" id="class_stat_chart_html"><div class="ttname"><a href="class_stat_chart.html">StatChart</a></div><div class="ttdoc">통계 차트 클래스 </div><div class="ttdef"><b>Definition:</b> <a href="statchart_8h_source.html#l00010">statchart.h:10</a></div></div>
+<div class="ttc" id="class_stat_chart_html_ae83b109d2fcaa93fa27003286c86a987"><div class="ttname"><a href="class_stat_chart.html#ae83b109d2fcaa93fa27003286c86a987">StatChart::scatterPlot</a></div><div class="ttdeci">static QtCharts::QChartView * scatterPlot(dataset &amp;dataX, dataset &amp;dataY, QString title=&quot;&quot;, QString label=&quot;&quot;)</div><div class="ttdoc">이변량 데이터의 다중산점돌르 qchart로 작성합니다. </div><div class="ttdef"><b>Definition:</b> <a href="statchart_8cpp_source.html#l00044">statchart.cpp:44</a></div></div>
+<div class="ttc" id="class_stat_chart_html_a053fe2e9fe5838a554a2059f2cc7e0ad"><div class="ttname"><a href="class_stat_chart.html#a053fe2e9fe5838a554a2059f2cc7e0ad">StatChart::histogram</a></div><div class="ttdeci">static QtCharts::QChartView * histogram(dataset &amp;data, QString title=&quot;&quot;, QString label=&quot;&quot;)</div><div class="ttdoc">일변량 데이터의 히스토그램을 qchart로 작성합니다. </div><div class="ttdef"><b>Definition:</b> <a href="statchart_8cpp_source.html#l00010">statchart.cpp:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+다음에 의해 생성됨 :  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

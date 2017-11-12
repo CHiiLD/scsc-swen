@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basicstat',['BasicStat',['../class_basic_stat.html',1,'']]]
+  ['aprint',['APrint',['../class_a_print.html',1,'']]]
 ];

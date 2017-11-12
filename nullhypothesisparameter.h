@@ -1,6 +1,11 @@
 #ifndef NULLHYPOTHESISPARAMETER_H
 #define NULLHYPOTHESISPARAMETER_H
 #include <QString>
+#include "aprint.h"
+
+#define NULL_HYPOTHESIS_SIGN_LESS_THEN ">"
+#define NULL_HYPOTHESIS_SIGN_GREATER_THEN "<"
+#define NULL_HYPOTHESIS_SIGN_NEIN "≠"
 
 enum class NullHypothesisSign
 {
@@ -10,7 +15,10 @@ enum class NullHypothesisSign
     NOT_EQUAL
 };
 
-class NullHypothesisParameter
+/**
+ * @brief 가설검정 데이터 클래스
+ */
+class NullHypothesisParameter : public Print
 {
 public:
     NullHypothesisParameter();
@@ -33,6 +41,11 @@ public:
 
     double getTestValue() const;
     void setTestValue(double value);
+
+    /**
+     * @brief 클래스 정보를 출력합니다.
+     */
+    virtual void print() override;
 
 private:
     /**

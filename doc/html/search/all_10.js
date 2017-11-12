@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ui',['Ui',['../namespace_ui.html',1,'Ui'],['../class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow::ui()']]]
+  ['randnumber',['RandNumber',['../class_rand_number.html',1,'']]],
+  ['randnumgen_2ecpp',['randnumgen.cpp',['../randnumgen_8cpp.html',1,'']]],
+  ['randnumgen_2eh',['randnumgen.h',['../randnumgen_8h.html',1,'']]]
 ];

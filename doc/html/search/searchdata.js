@@ -1,14 +1,15 @@
 var indexSectionsWithContent =
 {
-  0: "abcdghilmnopqrstuvz~",
-  1: "bmnr",
+  0: "abcdefghijlmnopqrstuvwz~",
+  1: "afmnprs",
   2: "u",
-  3: "bmnor",
-  4: "cghimnpqstvz~",
-  5: "adstu",
-  6: "n",
-  7: "gln",
-  8: "nop"
+  3: "abfmnrs",
+  4: "cefghijmnpqstvwz~",
+  5: "admqstuv",
+  6: "d",
+  7: "n",
+  8: "gln",
+  9: "nopt"
 };
 
 var indexSectionNames =
@@ -19,9 +20,10 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "enums",
-  7: "enumvalues",
-  8: "defines"
+  6: "typedefs",
+  7: "enums",
+  8: "enumvalues",
+  9: "defines"
 };
 
 var indexSectionLabels =
@@ -32,8 +34,9 @@ var indexSectionLabels =
   3: "파일들",
   4: "함수",
   5: "변수",
-  6: "열거형 타입",
-  7: "열거형 멤버",
-  8: "매크로"
+  6: "타입정의",
+  7: "열거형 타입",
+  8: "열거형 멤버",
+  9: "매크로"
 };
 

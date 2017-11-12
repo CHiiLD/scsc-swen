@@ -29,7 +29,11 @@ SOURCES += \
     randnumgen.cpp \
     basicstat.cpp \
     nullhypothesisparameter.cpp \
-    nullhypothesis.cpp
+    nullhypothesis.cpp \
+    aprint.cpp \
+    save.cpp \
+    statchart.cpp \
+    foundtationstatdata.cpp
 
 
 HEADERS += \
@@ -38,7 +42,11 @@ HEADERS += \
     basicstat.h \
     nullhypothesisparameter.h \
     nullhypothesis.h \
-    ok.h
+    aprint.h \
+    swen.h \
+    save.h \
+    statchart.h \
+    foundtationstatdata.h
 
 
 FORMS += \

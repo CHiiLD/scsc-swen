@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pecentile',['pecentile',['../class_basic_stat.html#afdb2333c23f3bae16da5ea1c3f7526e8',1,'BasicStat']]]
+  ['judgenullhypothesis',['judgeNullHypothesis',['../class_main_window.html#ae57d21022fe4aa3bfe86434d129a78f1',1,'MainWindow']]]
 ];

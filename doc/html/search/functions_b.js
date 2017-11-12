@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['z_5fintegration',['z_integration',['../class_null_hypothesis.html#af96113404ab90237dead92cccf25bd5a',1,'NullHypothesis']]]
+  ['savebivariatedata',['saveBivariateData',['../class_main_window.html#a95d7d5e12845353bf0c4ab810e962187',1,'MainWindow']]],
+  ['saverandnumberdata',['saveRandNumberData',['../class_main_window.html#a305e69adc3b6a7217f7b91cf13e6a710',1,'MainWindow']]],
+  ['savetofile',['saveToFile',['../class_main_window.html#a9ad7bdea1ad897bca9007f40b6cbee8f',1,'MainWindow']]],
+  ['saveunivariatedata',['saveUnivariateData',['../class_main_window.html#a3eb5d172add89e4119d886a02a9c50e0',1,'MainWindow']]],
+  ['scatterplot',['scatterPlot',['../class_stat_chart.html#ae83b109d2fcaa93fa27003286c86a987',1,'StatChart']]],
+  ['setalpha',['setAlpha',['../class_null_hypothesis_parameter.html#a4d6e3d44ebb91bfa0e88cb6ac4c9b8f2',1,'NullHypothesisParameter']]],
+  ['setdatasize',['setDataSize',['../class_null_hypothesis_parameter.html#a4a90743e8ce67ec0334843179ad00df5',1,'NullHypothesisParameter']]],
+  ['setmean',['setMean',['../class_foundtation_stat_data.html#a5096b9217cb50d77f40cae2ccd44c829',1,'FoundtationStatData']]],
+  ['setq1',['setQ1',['../class_foundtation_stat_data.html#a857c929f59af8cd9f3da7bdfa92ac7a7',1,'FoundtationStatData']]],
+  ['setq2',['setQ2',['../class_foundtation_stat_data.html#a0c70cd3f252e5b2c267234e50e9a58da',1,'FoundtationStatData']]],
+  ['setq3',['setQ3',['../class_foundtation_stat_data.html#a8305a90451eadbabcbe054edda6bf456',1,'FoundtationStatData']]],
+  ['setsign',['setSign',['../class_null_hypothesis_parameter.html#a5dbda1a9e422114557be322f51e2b5fe',1,'NullHypothesisParameter']]],
+  ['setstandarddeviation',['setStandardDeviation',['../class_foundtation_stat_data.html#a63fd26b7427c3358793dbac5093115db',1,'FoundtationStatData::setStandardDeviation()'],['../class_null_hypothesis_parameter.html#a765d9830020b9a46042d7f7252c71d9e',1,'NullHypothesisParameter::setStandardDeviation()']]],
+  ['setteststatistic',['setTestStatistic',['../class_null_hypothesis_parameter.html#a1a9191671713f1ea178df0f6ba831068',1,'NullHypothesisParameter']]],
+  ['settestvalue',['setTestValue',['../class_null_hypothesis_parameter.html#abcd57085f529f4e9dbaa149266478cef',1,'NullHypothesisParameter']]],
+  ['setvariance',['setVariance',['../class_foundtation_stat_data.html#a91834a023890294c8cc74b58b273058c',1,'FoundtationStatData']]],
+  ['showabout',['showAbout',['../class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197',1,'MainWindow']]],
+  ['showhistogram',['showHistogram',['../class_main_window.html#a78cd940947897776c278f047ea058fbd',1,'MainWindow']]],
+  ['showscatterplot',['showScatterPlot',['../class_main_window.html#a6a9f28aa107072bf6869c8b48f197fb8',1,'MainWindow']]],
+  ['showwronginputmessagebox',['showWrongInputMessageBox',['../class_main_window.html#ab550cad5c29365827496dfe01bf5409b',1,'MainWindow']]],
+  ['standard_5fnormal',['standard_normal',['../class_null_hypothesis.html#a4700d641cf47cb33fd053a9635510161',1,'NullHypothesis']]],
+  ['standarddeviation',['standardDeviation',['../class_foundation_stat.html#a42f16b75c9552115b8a3173ca25d90b8',1,'FoundationStat']]],
+  ['student',['student',['../class_null_hypothesis.html#ac2f7fea7c37aaa928ef8f2ef13250059',1,'NullHypothesis']]],
+  ['sumofdeviationsquare',['sumOfDeviationSquare',['../class_foundation_stat.html#adb6d1e578071377cc62c1687cf990b3c',1,'FoundationStat']]]
 ];

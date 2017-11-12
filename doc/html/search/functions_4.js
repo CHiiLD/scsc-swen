@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
-  ['mean',['mean',['../class_basic_stat.html#aed8ec3b5bb710e508c1381177eb2b7af',1,'BasicStat']]]
+  ['histogram',['histogram',['../class_stat_chart.html#a053fe2e9fe5838a554a2059f2cc7e0ad',1,'StatChart']]],
+  ['hyphothesis',['hyphothesis',['../class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e',1,'NullHypothesis::hyphothesis(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign)'],['../class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d',1,'NullHypothesis::hyphothesis(NullHypothesisParameter parameter)']]]
 ];

@@ -1,4 +1,5 @@
 #include "nullhypothesisparameter.h"
+#include <QDebug>
 
 NullHypothesisParameter::NullHypothesisParameter() :
     testStatistic(0), standardDeviation(0), dataSize(0), testValue(0), alpha(0), sign(NullHypothesisSign::NONE)
@@ -70,4 +71,28 @@ double NullHypothesisParameter::getTestValue() const
 void NullHypothesisParameter::setTestValue(double value)
 {
     testValue = value;
+}
+
+void NullHypothesisParameter::print()
+{
+    Print::print();
+    qDebug() << "test statistic: " << testStatistic;
+    qDebug() << "standard deviation: " << standardDeviation;
+    qDebug() << "alpha: " << alpha;
+    qDebug() << "test value: " << testValue;
+    qDebug() << "data count: " << dataSize;
+    switch (sign)
+    {
+    case NullHypothesisSign::NOT_EQUAL:
+        qDebug() << "sign: " << NULL_HYPOTHESIS_SIGN_NEIN;
+        break;
+    case NullHypothesisSign::LESS_THEN:
+        qDebug() << "sign: " << NULL_HYPOTHESIS_SIGN_LESS_THEN;
+        break;
+    case NullHypothesisSign::GREATER_THEN:
+        qDebug() << "sign: " << NULL_HYPOTHESIS_SIGN_GREATER_THEN;
+        break;
+    default:
+        break;
+    }
 }

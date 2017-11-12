@@ -1,18 +1,6 @@
 var searchData=
 [
-  ['saverandnumberoutput',['saveRandNumberOutput',['../class_main_window.html#accff23bc469fc20a5b81250667124554',1,'MainWindow']]],
-  ['setalpha',['setAlpha',['../class_null_hypothesis_parameter.html#a4d6e3d44ebb91bfa0e88cb6ac4c9b8f2',1,'NullHypothesisParameter']]],
-  ['setdatasize',['setDataSize',['../class_null_hypothesis_parameter.html#a4a90743e8ce67ec0334843179ad00df5',1,'NullHypothesisParameter']]],
-  ['setsign',['setSign',['../class_null_hypothesis_parameter.html#a5dbda1a9e422114557be322f51e2b5fe',1,'NullHypothesisParameter']]],
-  ['setstandarddeviation',['setStandardDeviation',['../class_null_hypothesis_parameter.html#a765d9830020b9a46042d7f7252c71d9e',1,'NullHypothesisParameter']]],
-  ['setteststatistic',['setTestStatistic',['../class_null_hypothesis_parameter.html#a1a9191671713f1ea178df0f6ba831068',1,'NullHypothesisParameter']]],
-  ['settestvalue',['setTestValue',['../class_null_hypothesis_parameter.html#abcd57085f529f4e9dbaa149266478cef',1,'NullHypothesisParameter']]],
-  ['showabout',['showAbout',['../class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197',1,'MainWindow']]],
-  ['showwronginputmessagebox',['showWrongInputMessageBox',['../class_main_window.html#ab550cad5c29365827496dfe01bf5409b',1,'MainWindow']]],
-  ['sign',['sign',['../class_null_hypothesis_parameter.html#ad09172ab72e0dde0f9fd87838c3cef0c',1,'NullHypothesisParameter']]],
-  ['standard_5fnormal',['standard_normal',['../class_null_hypothesis.html#a4700d641cf47cb33fd053a9635510161',1,'NullHypothesis']]],
-  ['standarddeviation',['standardDeviation',['../class_null_hypothesis_parameter.html#a92df6388c64cbffac5393b7902b8ebc4',1,'NullHypothesisParameter']]],
-  ['stddeviation',['stdDeviation',['../class_basic_stat.html#abb6de0298ddccab2faa991ef3fd750be',1,'BasicStat']]],
-  ['student',['student',['../class_null_hypothesis.html#ac2f7fea7c37aaa928ef8f2ef13250059',1,'NullHypothesis']]],
-  ['sumofdeviationsquare',['sumOfDeviationSquare',['../class_basic_stat.html#a205826e32aa25d75146442f49e0d2684',1,'BasicStat']]]
+  ['pecentile',['pecentile',['../class_foundation_stat.html#a024eb13afb0ba1a39eba910fae7e4cb7',1,'FoundationStat']]],
+  ['pi',['PI',['../nullhypothesis_8cpp.html#a598a3330b3c21701223ee0ca14316eca',1,'nullhypothesis.cpp']]],
+  ['print',['Print',['../class_print.html',1,'Print'],['../class_a_print.html#a14385854139d3da1931b044d5186b6e4',1,'APrint::print()'],['../class_print.html#ace567062530843d5b1be82591de78557',1,'Print::print()'],['../class_foundtation_stat_data.html#aab768c6a67dd13bc20fd57507cbb32f9',1,'FoundtationStatData::print()'],['../class_null_hypothesis_parameter.html#a7cc0c2886a536bd23579b98a8bd235c5',1,'NullHypothesisParameter::print()']]]
 ];

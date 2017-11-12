@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sign',['sign',['../class_null_hypothesis_parameter.html#ad09172ab72e0dde0f9fd87838c3cef0c',1,'NullHypothesisParameter']]],
-  ['standarddeviation',['standardDeviation',['../class_null_hypothesis_parameter.html#a92df6388c64cbffac5393b7902b8ebc4',1,'NullHypothesisParameter']]]
+  ['mean',['mean',['../class_foundtation_stat_data.html#a357f394353f248a912689f45c2b49644',1,'FoundtationStatData']]]
 ];

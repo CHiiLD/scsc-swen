@@ -3,6 +3,8 @@
 #include "randnumgen.h"
 #include "basicstat.h"
 #include "nullhypothesis.h"
+#include "save.h"
+#include "statchart.h"
 
 #include <QStandardItemModel>
 #include <QMessageBox>
@@ -38,7 +40,7 @@
 
 using namespace QtCharts;
 
-bool writeUnivariateStatOutput(std::list<double> data, QAbstractItemModel* model, int row);
+bool writeUnivariateStatOutput(dataset data, QAbstractItemModel* model, int row);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -61,23 +63,23 @@ void MainWindow::init()
 
     // 난수생성 컴포넌트들의 이벤트를 연결합니다.
     connect(ui->pushButton_randGenExecute, SIGNAL(clicked(bool)), this, SLOT(genelateRandomNumber(bool)));
-    connect(ui->pushButton_randGenInit, SIGNAL(clicked(bool)), this, SLOT(clearRandNumberOutputBox(bool)));
-    connect(ui->pushButton_randGenSave, SIGNAL(clicked(bool)), this, SLOT(saveRandNumberOutput(bool)));
+    connect(ui->pushButton_randGenInit, SIGNAL(clicked(bool)), this, SLOT(clearRandNumberData(bool)));
+    connect(ui->pushButton_randGenSave, SIGNAL(clicked(bool)), this, SLOT(saveRandNumberData(bool)));
 
     // 기초통계량 - 일변량 컴포넌트 이벤트를 연결합니다.
     connect(ui->pushButton_univariateHistogram, SIGNAL(clicked(bool)), this, SLOT(showHistogram(bool)));
     connect(ui->pushButton_univariateExecute, SIGNAL(clicked(bool)), this, SLOT(calcUnivariateData(bool)));
-    connect(ui->pushButton_univariateInit, SIGNAL(clicked(bool)), this, SLOT(clearUnivariateOutputBox(bool)));
-    connect(ui->pushButton_univariateSave, SIGNAL(clicked(bool)), this, SLOT(saveUnivariateOutput(bool)));
+    connect(ui->pushButton_univariateInit, SIGNAL(clicked(bool)), this, SLOT(clearUnivariateData(bool)));
+    connect(ui->pushButton_univariateSave, SIGNAL(clicked(bool)), this, SLOT(saveUnivariateData(bool)));
 
     // 기초통계량 - 이변량 컴포넌트 이벤트를 연결합니다.
     connect(ui->pushButton_bivarivateScatterPlot, SIGNAL(clicked(bool)), this, SLOT(showScatterPlot(bool)));
     connect(ui->pushButton_bivarivateExecute, SIGNAL(clicked(bool)), this, SLOT(calcBivariateData(bool)));
-    connect(ui->pushButton_bivariateInit, SIGNAL(clicked(bool)), this, SLOT(clearBivariateOutputBox(bool)));
-    connect(ui->pushButton_bivariateSave, SIGNAL(clicked(bool)), this, SLOT(saveBivariateOutput(bool)));
+    connect(ui->pushButton_bivariateInit, SIGNAL(clicked(bool)), this, SLOT(clearBivariateData(bool)));
+    connect(ui->pushButton_bivariateSave, SIGNAL(clicked(bool)), this, SLOT(saveBivariateData(bool)));
 
     connect(ui->pushButton_nullhypothesisExecute, SIGNAL(clicked(bool)), this, SLOT(judgeNullHypothesis(bool)));
-    connect(ui->pushButton_nullHypothesisInit, SIGNAL(clicked(bool)), this, SLOT(claerNullHypothesisOutputBox(bool)));
+    connect(ui->pushButton_nullHypothesisInit, SIGNAL(clicked(bool)), this, SLOT(claerNullHypothesisData(bool)));
 
     // 일변량 데이터 입력 테이블뷰 설정
     QStandardItemModel *model = new QStandardItemModel(TABLEVIEW_ROW_MAX_SIZE,1,this);
@@ -155,7 +157,7 @@ void MainWindow::quit()
 
 void MainWindow::showWrongInputMessageBox()
 {
-    QMessageBox::about(this, "알림", "잘못된 입력입니다!");
+    QMessageBox::information(this, "알림", "잘못된 입력입니다!");
 }
 
 void MainWindow::genelateRandomNumber(bool checked)
@@ -194,7 +196,7 @@ void MainWindow::genelateRandomNumber(bool checked)
     ui->textEdit_randGenOutput->setText(text);
 }
 
-void MainWindow::clearRandNumberOutputBox(bool checked)
+void MainWindow::clearRandNumberData(bool checked)
 {
     ui->textEdit_randGenOutput->clear();
     ui->lineEdit_randGenMinValue->clear();
@@ -204,34 +206,24 @@ void MainWindow::clearRandNumberOutputBox(bool checked)
 
 void MainWindow::saveToFile(QString text)
 {
-    QString fileName = QFileDialog::getSaveFileName(this, "데이터를 저장합니다");
-
-    if (fileName.isEmpty())
-        return;
-    QFile file(fileName);
-    if (!file.open(QIODevice::WriteOnly))
+    QString error;
+    if(!Save::ToFile(this, text, error))
     {
-        QMessageBox::information(this, "파일을 열 수 없습니다.", file.errorString());
-        return;
+        QMessageBox::information(this, "파일을 열 수 없습니다.", error);
     }
-
-    QTextStream stream(&file);
-    stream.setCodec("UTF-8");
-    stream << text;
-    file.close();
 }
 
-void MainWindow::saveRandNumberOutput(bool checked)
+void MainWindow::saveRandNumberData(bool checked)
 {
     QString text = ui->textEdit_randGenOutput->toPlainText();
     saveToFile(text);
 }
 
-bool extractDataset(QAbstractItemModel* model, int col, std::list<double>& data)
+bool extractDataset(QAbstractItemModel* model, int col, dataset& data)
 {
     int row, rowCount = model->rowCount();
     bool ok = false;
-    std::list<double> list;
+    dataset list;
     // 공백을 만날 때까지 테이블뷰에서 데이터를 수집한다.
     for(row = 0; row < rowCount; ++row)
     {
@@ -262,44 +254,10 @@ bool extractDataset(QAbstractItemModel* model, int col, std::list<double>& data)
     return ok;
 }
 
-QChartView* drawHistogram(std::list<double>& data, QString title = "", QString label = "")
-{
-    QStringList categories;
-    QBarSet *barset = new QBarSet(label);
-
-    int num = 0;
-    for(auto iter = data.begin(); iter != data.end(); ++iter)
-    {
-        *barset << *iter;
-        categories << QString::number(++num);
-    }
-
-    QBarSeries *series = new QBarSeries();
-    series->append(barset);
-
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    if(title.length() != 0)
-        chart->setTitle(title);
-    chart->setAnimationOptions(QChart::SeriesAnimations);
-
-    QBarCategoryAxis *axis = new QBarCategoryAxis();
-    axis->append(categories);
-    chart->createDefaultAxes();
-    chart->setAxisX(axis, series);
-
-    chart->legend()->setVisible(true);
-    chart->legend()->setAlignment(Qt::AlignBottom);
-
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-    return chartView;
-}
-
 void MainWindow::showHistogram(bool checked)
 {
     QAbstractItemModel* model = ui->tableView_univariateInput->model();
-    std::list<double> data;
+    dataset data;
     bool ok = extractDataset(model, 0, data);
 
     if(!ok)
@@ -308,13 +266,13 @@ void MainWindow::showHistogram(bool checked)
         return;
     }
 
-    drawHistogram(data, "히스토그램", TERM_X)->show();
+    StatChart::histogram(data, "히스토그램", TERM_X)->show();
 }
 
 void MainWindow::calcUnivariateData(bool checked)
 {
     QAbstractItemModel* model = ui->tableView_univariateInput->model();
-    std::list<double> data;
+    dataset data;
     bool ok = extractDataset(model, 0, data);
 
     if(!ok)
@@ -331,7 +289,7 @@ void MainWindow::calcUnivariateData(bool checked)
     }
 }
 
-void MainWindow::clearUnivariateOutputBox(bool checked)
+void MainWindow::clearUnivariateData(bool checked)
 {
     QStandardItemModel* model = (QStandardItemModel*) ui->tableView_univariateInput->model();
     model->setRowCount(0);
@@ -341,11 +299,11 @@ void MainWindow::clearUnivariateOutputBox(bool checked)
     model->setRowCount(1);
 }
 
-void MainWindow::saveUnivariateOutput(bool checked)
+void MainWindow::saveUnivariateData(bool checked)
 {
     QString text;
     QAbstractItemModel* model = ui->tableView_univariateInput->model();
-    std::list<double> data;
+    dataset data;
     bool ok = extractDataset(model, 0, data);
 
     if(!ok)
@@ -382,82 +340,32 @@ void MainWindow::saveUnivariateOutput(bool checked)
     saveToFile(text);
 }
 
-QChartView* drawScatterPlot(std::list<double>& dataX, std::list<double>& dataY, QString title = "", QString seriesName = "")
-{
-    double minX = *std::min_element(dataX.begin(), dataX.end());
-    double maxX = *std::max_element(dataX.begin(), dataX.end());
-    double minY = *std::min_element(dataY.begin(), dataY.end());
-    double maxY = *std::max_element(dataY.begin(), dataY.end());
-    double axisXmin = minX - 1.0;
-    double axisXmax = maxX + 1.0;
-    double axisYmin = minY - 1.0;
-    double axisYmax = maxY + 1.0;
-    if(minX != maxX)
-    {
-        axisXmin = minX - (abs(maxX - minX) * 0.1);
-        axisXmax = maxX + (abs(maxX - minX) * 0.1);
-    }
-    if(minY != maxY)
-    {
-        axisYmin = minY - (abs(maxY - minY) * 0.1);
-        axisYmax = maxY + (abs(maxY - minY) * 0.1);
-    }
-
-    QScatterSeries *series = new QScatterSeries();
-    series->setName(seriesName);
-    series->setMarkerShape(QScatterSeries::MarkerShapeCircle);
-    series->setMarkerSize(12.0);
-
-    std::list<double>::iterator iterX, iterY;
-    for(int i = 0; i < dataX.size(); ++i)
-    {
-        iterX = dataX.begin();
-        iterY = dataY.begin();
-        std::advance(iterX, i);
-        std::advance(iterY, i);
-        series->append(*iterX, *iterY);
-    }
-
-    QChart *chart = new QChart();
-    chart->addSeries(series);
-    chart->setTitle(title);
-    chart->createDefaultAxes();
-    chart->setDropShadowEnabled(false);
-    chart->legend()->setMarkerShape(QLegend::MarkerShapeCircle);
-    chart->axisX()->setRange(axisXmin, axisXmax);
-    chart->axisY()->setRange(axisYmin, axisYmax);
-
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
-    return chartView;
-}
-
 void MainWindow::showScatterPlot(bool checked)
 {
     QAbstractItemModel* model = ui->tableView_bivariateInput->model();
-    std::list<double> dataX, dataY;
+    dataset dataX, dataY;
     double cc;
     bool ok = extractDataset(model, 0, dataX);
     ok &= extractDataset(model, 1, dataY);
-    if(!ok || BasicStat::correlationCoefficient(dataX, dataY, cc) != OK)
+    if(!ok || FoundationStat::correlationCoefficient(dataX, dataY, cc) != OK)
     {
         showWrongInputMessageBox();
         return;
     }
 
-    drawScatterPlot(dataX, dataY, "산점도", "데이터")->show();
+    StatChart::scatterPlot(dataX, dataY, "산점도", "데이터")->show();
 }
 
-bool writeUnivariateStatOutput(std::list<double> data, QAbstractItemModel* model, int row)
+bool writeUnivariateStatOutput(dataset data, QAbstractItemModel* model, int row)
 {
     double mean, variance, std, q1, q2, q3;
 
-    int ret = BasicStat::mean(data, mean);
-    ret |= BasicStat::variance(data, variance);
-    ret |= BasicStat::standardDeviation(data, std);
-    ret |= BasicStat::pecentile(data, 0.25, q1);
-    ret |= BasicStat::pecentile(data, 0.5, q2);
-    ret |= BasicStat::pecentile(data, 0.75, q3);
+    int ret = FoundationStat::mean(data, mean);
+    ret |= FoundationStat::variance(data, variance);
+    ret |= FoundationStat::standardDeviation(data, std);
+    ret |= FoundationStat::pecentile(data, 0.25, q1);
+    ret |= FoundationStat::pecentile(data, 0.5, q2);
+    ret |= FoundationStat::pecentile(data, 0.75, q3);
 
     if(ret != OK)
         return false;
@@ -475,23 +383,18 @@ bool writeUnivariateStatOutput(std::list<double> data, QAbstractItemModel* model
 void MainWindow::calcBivariateData(bool checked)
 {
     QAbstractItemModel* model = ui->tableView_bivariateInput->model();
-    std::list<double> dataX, dataY;
+    dataset dataX, dataY;
     double cc;
     bool ok = extractDataset(model, 0, dataX);
     ok &= extractDataset(model, 1, dataY);
-    if(!ok || BasicStat::correlationCoefficient(dataX, dataY, cc) != OK)
+    if(!ok || FoundationStat::correlationCoefficient(dataX, dataY, cc) != OK)
     {
         showWrongInputMessageBox();
         return;
     }
 
     model = ui->tableView_bivariateOutput->model();
-    if(!writeUnivariateStatOutput(dataX, model, 0))
-    {
-        showWrongInputMessageBox();
-        return;
-    }
-    if(!writeUnivariateStatOutput(dataY, model, 1))
+    if(!writeUnivariateStatOutput(dataX, model, 0) || !writeUnivariateStatOutput(dataY, model, 1))
     {
         showWrongInputMessageBox();
         return;
@@ -501,7 +404,7 @@ void MainWindow::calcBivariateData(bool checked)
     model->setData(model->index(1, 6), cc);
 }
 
-void MainWindow::clearBivariateOutputBox(bool checked)
+void MainWindow::clearBivariateData(bool checked)
 {
     QStandardItemModel* model = (QStandardItemModel*) ui->tableView_bivariateInput->model();
     model->setRowCount(0);
@@ -511,15 +414,15 @@ void MainWindow::clearBivariateOutputBox(bool checked)
     model->setRowCount(2);
 }
 
-void MainWindow::saveBivariateOutput(bool checked)
+void MainWindow::saveBivariateData(bool checked)
 {
     QString text;
     QAbstractItemModel* model = ui->tableView_bivariateInput->model();
-    std::list<double> dataX, dataY;
+    dataset dataX, dataY;
     double cc;
     bool ok = extractDataset(model, 0, dataX);
     ok &= extractDataset(model, 1, dataY);
-    if(!ok || BasicStat::correlationCoefficient(dataX, dataY, cc) != OK)
+    if(!ok || FoundationStat::correlationCoefficient(dataX, dataY, cc) != OK)
     {
         showWrongInputMessageBox();
         return;
@@ -554,7 +457,7 @@ void MainWindow::saveBivariateOutput(bool checked)
 
     // X:Y데이터 셋
     text.append(TERM_X).append(split).append(TERM_Y).append(space).append(TERM_DATASET).append(newline);
-    std::list<double>::iterator iterX, iterY;
+    dataset::iterator iterX, iterY;
     for(int i = 0; i < dataX.size(); ++i)
     {
         iterX = dataX.begin();
@@ -594,14 +497,11 @@ void MainWindow::judgeNullHypothesis(bool checked)
         if(!ok) break;
     } while(false);
 
-
-
-    QString nein = "≠", less = ">", greater = "<";
-    if(sSign.compare(nein) == 0)
+    if(sSign.compare(NULL_HYPOTHESIS_SIGN_NEIN) == 0)
         sign = NullHypothesisSign::NOT_EQUAL;
-    else if (sSign.compare(less))
+    else if (sSign.compare(NULL_HYPOTHESIS_SIGN_LESS_THEN))
         sign = NullHypothesisSign::LESS_THEN;
-    else if (sSign.compare(greater))
+    else if (sSign.compare(NULL_HYPOTHESIS_SIGN_GREATER_THEN))
         sign = NullHypothesisSign::GREATER_THEN;
 
     if(!ok || sign == NullHypothesisSign::NONE)
@@ -630,7 +530,7 @@ void MainWindow::judgeNullHypothesis(bool checked)
     ui->textEdit_nullHypothesisOutput->setText(text);
 }
 
-void MainWindow::claerNullHypothesisOutputBox(bool checked)
+void MainWindow::claerNullHypothesisData(bool checked)
 {
     ui->lineEdit_nullHypothesisTestStatistic->clear();
     ui->lineEdit_nullHypothesisStdDeviation->clear();

@@ -11,9 +11,11 @@ var menudata={children:[
 {text:"a",url:"functions.html#index_a"},
 {text:"c",url:"functions.html#index_c"},
 {text:"d",url:"functions.html#index_d"},
+{text:"f",url:"functions.html#index_f"},
 {text:"g",url:"functions.html#index_g"},
 {text:"h",url:"functions.html#index_h"},
 {text:"i",url:"functions.html#index_i"},
+{text:"j",url:"functions.html#index_j"},
 {text:"m",url:"functions.html#index_m"},
 {text:"n",url:"functions.html#index_n"},
 {text:"p",url:"functions.html#index_p"},
@@ -26,9 +28,11 @@ var menudata={children:[
 {text:"~",url:"functions.html#index_0x7e"}]},
 {text:"함수",url:"functions_func.html",children:[
 {text:"c",url:"functions_func.html#index_c"},
+{text:"f",url:"functions_func.html#index_f"},
 {text:"g",url:"functions_func.html#index_g"},
 {text:"h",url:"functions_func.html#index_h"},
 {text:"i",url:"functions_func.html#index_i"},
+{text:"j",url:"functions_func.html#index_j"},
 {text:"m",url:"functions_func.html#index_m"},
 {text:"n",url:"functions_func.html#index_n"},
 {text:"p",url:"functions_func.html#index_p"},
@@ -44,5 +48,6 @@ var menudata={children:[
 {text:"파일 멤버",url:"globals.html",children:[
 {text:"모두",url:"globals.html"},
 {text:"함수",url:"globals_func.html"},
+{text:"타입정의",url:"globals_type.html"},
 {text:"열거형 타입",url:"globals_enum.html"},
 {text:"매크로",url:"globals_defs.html"}]}]}]}

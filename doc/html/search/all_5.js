@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['hyphothesis',['hyphothesis',['../class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e',1,'NullHypothesis::hyphothesis(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign)'],['../class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d',1,'NullHypothesis::hyphothesis(NullHypothesisParameter parameter)']]]
+  ['foundationstat',['FoundationStat',['../class_foundation_stat.html',1,'']]],
+  ['foundtationstatdata',['FoundtationStatData',['../class_foundtation_stat_data.html',1,'FoundtationStatData'],['../class_foundtation_stat_data.html#a6d207550a7c5068adac7481ca28e8a85',1,'FoundtationStatData::FoundtationStatData()']]],
+  ['foundtationstatdata_2ecpp',['foundtationstatdata.cpp',['../foundtationstatdata_8cpp.html',1,'']]],
+  ['foundtationstatdata_2eh',['foundtationstatdata.h',['../foundtationstatdata_8h.html',1,'']]]
 ];

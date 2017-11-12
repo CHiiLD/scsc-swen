@@ -59,16 +59,34 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a>  </div>
   <div class="headertitle">
 <div class="title">mainwindow.cpp 파일 참조</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&quot;</code><br />
 <code>#include &quot;ui_mainwindow.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="randnumgen_8h_source.html">randnumgen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="basicstat_8h_source.html">basicstat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nullhypothesis_8h_source.html">nullhypothesis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="statchart_8h_source.html">statchart.h</a>&quot;</code><br />
 <code>#include &lt;QStandardItemModel&gt;</code><br />
 <code>#include &lt;QMessageBox&gt;</code><br />
 <code>#include &lt;QFileDialog&gt;</code><br />
-<code>#include &quot;<a class="el" href="randnumgen_8h_source.html">randnumgen.h</a>&quot;</code><br />
+<code>#include &lt;QtCharts/QChartView&gt;</code><br />
+<code>#include &lt;QtCharts/QBarSeries&gt;</code><br />
+<code>#include &lt;QtCharts/QBarSet&gt;</code><br />
+<code>#include &lt;QtCharts/QLegend&gt;</code><br />
+<code>#include &lt;QtCharts/QBarCategoryAxis&gt;</code><br />
+<code>#include &lt;QtCharts/QScatterSeries&gt;</code><br />
+<code>#include &lt;QtCharts/QLegendMarker&gt;</code><br />
+<code>#include &lt;QtGui/QImage&gt;</code><br />
+<code>#include &lt;QtGui/QPainter&gt;</code><br />
+<code>#include &lt;QtCore/QtMath&gt;</code><br />
+<code>#include &lt;QTextStream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 mainwindow.cpp에 대한 include 의존 그래프</div>
 <div class="dyncontent">
@@ -78,6 +96,307 @@ mainwindow.cpp에 대한 include 의존 그래프</div>
 </div>
 </div>
 <p><a href="mainwindow_8cpp_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:aa3821f7d14c4aff0ab30f75c01044b1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#aa3821f7d14c4aff0ab30f75c01044b1d">TABLEVIEW_ROW_MAX_SIZE</a>&#160;&#160;&#160;50000</td></tr>
+<tr class="separator:aa3821f7d14c4aff0ab30f75c01044b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa746de3194a7a0fea9a21c46f93e3670"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#aa746de3194a7a0fea9a21c46f93e3670">TERM_MEAN</a>&#160;&#160;&#160;&quot;평균&quot;</td></tr>
+<tr class="separator:aa746de3194a7a0fea9a21c46f93e3670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15135f304f5f2447ac5d66e01079030"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#ab15135f304f5f2447ac5d66e01079030">TERM_VARIANCE</a>&#160;&#160;&#160;&quot;분산&quot;</td></tr>
+<tr class="separator:ab15135f304f5f2447ac5d66e01079030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67bafab9bbf7b3435dc73ed4c32fe733"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#a67bafab9bbf7b3435dc73ed4c32fe733">TERM_STD_DEVIATION</a>&#160;&#160;&#160;&quot;표준편차&quot;</td></tr>
+<tr class="separator:a67bafab9bbf7b3435dc73ed4c32fe733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7faba8a5c2905cd7345c2cfbe25f763b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#a7faba8a5c2905cd7345c2cfbe25f763b">TERM_25TH_PERCENTILE</a>&#160;&#160;&#160;&quot;제1분위수&quot;</td></tr>
+<tr class="separator:a7faba8a5c2905cd7345c2cfbe25f763b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a93d31267091c27c981dedee08b75c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#a4a93d31267091c27c981dedee08b75c0">TERM_50TH_PERCENTILE</a>&#160;&#160;&#160;&quot;제2사분위수(중앙값)&quot;</td></tr>
+<tr class="separator:a4a93d31267091c27c981dedee08b75c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc12356bfee4c369e2d28c462997637"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#addc12356bfee4c369e2d28c462997637">TERM_75TH_PERCENTILE</a>&#160;&#160;&#160;&quot;제3사분위수&quot;</td></tr>
+<tr class="separator:addc12356bfee4c369e2d28c462997637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15dbf57bb53f76a58491873800791f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#af15dbf57bb53f76a58491873800791f3">TERM_CORRELATIONCOEFFICIENT</a>&#160;&#160;&#160;&quot;상관계수&quot;</td></tr>
+<tr class="separator:af15dbf57bb53f76a58491873800791f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c3316edb93c8589f8dea1b4ee62e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#ae0c3316edb93c8589f8dea1b4ee62e16">TERM_X</a>&#160;&#160;&#160;&quot;X&quot;</td></tr>
+<tr class="separator:ae0c3316edb93c8589f8dea1b4ee62e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1c42622639a478cb985aa25fc45f61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#abc1c42622639a478cb985aa25fc45f61">TERM_Y</a>&#160;&#160;&#160;&quot;Y&quot;</td></tr>
+<tr class="separator:abc1c42622639a478cb985aa25fc45f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f16b43de8e917530943b4a93ad42fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#a83f16b43de8e917530943b4a93ad42fe">TERM_FOUNDATION_STAT</a>&#160;&#160;&#160;&quot;기초통계량&quot;</td></tr>
+<tr class="separator:a83f16b43de8e917530943b4a93ad42fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dc35fbf222e6d9db8583249cfab91a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#af5dc35fbf222e6d9db8583249cfab91a">TERM_DATASET</a>&#160;&#160;&#160;&quot;데이터 셋&quot;</td></tr>
+<tr class="separator:af5dc35fbf222e6d9db8583249cfab91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:ad6ea94d56fce24b4902a9125c6f1077d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#ad6ea94d56fce24b4902a9125c6f1077d">writeUnivariateStatOutput</a> (<a class="el" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a> data, QAbstractItemModel *model, int row)</td></tr>
+<tr class="separator:ad6ea94d56fce24b4902a9125c6f1077d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec57b33b02b04491b2c42bb7654bf203"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainwindow_8cpp.html#aec57b33b02b04491b2c42bb7654bf203">extractDataset</a> (QAbstractItemModel *model, int col, <a class="el" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a> &amp;data)</td></tr>
+<tr class="separator:aec57b33b02b04491b2c42bb7654bf203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="aa3821f7d14c4aff0ab30f75c01044b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3821f7d14c4aff0ab30f75c01044b1d">&#9670;&nbsp;</a></span>TABLEVIEW_ROW_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TABLEVIEW_ROW_MAX_SIZE&#160;&#160;&#160;50000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00027">27</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7faba8a5c2905cd7345c2cfbe25f763b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7faba8a5c2905cd7345c2cfbe25f763b">&#9670;&nbsp;</a></span>TERM_25TH_PERCENTILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_25TH_PERCENTILE&#160;&#160;&#160;&quot;제1분위수&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00031">31</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4a93d31267091c27c981dedee08b75c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a93d31267091c27c981dedee08b75c0">&#9670;&nbsp;</a></span>TERM_50TH_PERCENTILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_50TH_PERCENTILE&#160;&#160;&#160;&quot;제2사분위수(중앙값)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00032">32</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="addc12356bfee4c369e2d28c462997637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc12356bfee4c369e2d28c462997637">&#9670;&nbsp;</a></span>TERM_75TH_PERCENTILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_75TH_PERCENTILE&#160;&#160;&#160;&quot;제3사분위수&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00033">33</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="af15dbf57bb53f76a58491873800791f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15dbf57bb53f76a58491873800791f3">&#9670;&nbsp;</a></span>TERM_CORRELATIONCOEFFICIENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_CORRELATIONCOEFFICIENT&#160;&#160;&#160;&quot;상관계수&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00034">34</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="af5dc35fbf222e6d9db8583249cfab91a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5dc35fbf222e6d9db8583249cfab91a">&#9670;&nbsp;</a></span>TERM_DATASET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_DATASET&#160;&#160;&#160;&quot;데이터 셋&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00038">38</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a83f16b43de8e917530943b4a93ad42fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f16b43de8e917530943b4a93ad42fe">&#9670;&nbsp;</a></span>TERM_FOUNDATION_STAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_FOUNDATION_STAT&#160;&#160;&#160;&quot;기초통계량&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00037">37</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa746de3194a7a0fea9a21c46f93e3670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa746de3194a7a0fea9a21c46f93e3670">&#9670;&nbsp;</a></span>TERM_MEAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_MEAN&#160;&#160;&#160;&quot;평균&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00028">28</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a67bafab9bbf7b3435dc73ed4c32fe733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67bafab9bbf7b3435dc73ed4c32fe733">&#9670;&nbsp;</a></span>TERM_STD_DEVIATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_STD_DEVIATION&#160;&#160;&#160;&quot;표준편차&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00030">30</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab15135f304f5f2447ac5d66e01079030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15135f304f5f2447ac5d66e01079030">&#9670;&nbsp;</a></span>TERM_VARIANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_VARIANCE&#160;&#160;&#160;&quot;분산&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00029">29</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae0c3316edb93c8589f8dea1b4ee62e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c3316edb93c8589f8dea1b4ee62e16">&#9670;&nbsp;</a></span>TERM_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_X&#160;&#160;&#160;&quot;X&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00035">35</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="abc1c42622639a478cb985aa25fc45f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1c42622639a478cb985aa25fc45f61">&#9670;&nbsp;</a></span>TERM_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TERM_Y&#160;&#160;&#160;&quot;Y&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="aec57b33b02b04491b2c42bb7654bf203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec57b33b02b04491b2c42bb7654bf203">&#9670;&nbsp;</a></span>extractDataset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool extractDataset </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractItemModel *&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00222">222</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ad6ea94d56fce24b4902a9125c6f1077d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ea94d56fce24b4902a9125c6f1077d">&#9670;&nbsp;</a></span>writeUnivariateStatOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeUnivariateStatOutput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="swen_8h.html#ac97537eed34e9d6f3395c62fb6494820">dataset</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QAbstractItemModel *&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a> 파일의 <a class="el" href="mainwindow_8cpp_source.html#l00359">359</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
