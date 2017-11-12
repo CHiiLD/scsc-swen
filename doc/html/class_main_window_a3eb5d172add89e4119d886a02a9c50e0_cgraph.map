@@ -1,0 +1,6 @@
+<map id="MainWindow::saveUnivariateData" name="MainWindow::saveUnivariateData">
+<area shape="rect" id="node2" href="$mainwindow_8cpp.html#aec57b33b02b04491b2c42bb7654bf203" title="extractDataset" alt="" coords="324,5,431,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ab550cad5c29365827496dfe01bf5409b" title="잘못된 입력에 대한 경고 메시지를 출력합니다. " alt="" coords="275,55,480,93"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a9ad7bdea1ad897bca9007f40b6cbee8f" title="파일 다이얼로그를 사용하여 텍스트를 파일로 저장합니다. " alt="" coords="293,117,462,143"/>
+<area shape="rect" id="node5" href="$class_save.html#aaa4104c8372e6d184c580a1933c0c03f" title="텍스트를 새로운 파일을 생성하여 저장합니다. " alt="" coords="528,117,622,143"/>
+</map>

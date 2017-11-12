@@ -1,0 +1,39 @@
+<map id="MainWindow::init" name="MainWindow::init">
+<area shape="rect" id="node2" href="$class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197" title="프로그램의 정보를 메시지박스로 출력합니다. " alt="" coords="215,5,386,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a542a7527ced73b2c9bc14f8dc9661a66" title="프로그램을 종료합니다. " alt="" coords="238,55,364,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a02558647ad7d371d5499604f2786e745" title="난수를 생성하고 결과를 업데이트합니다. " alt="" coords="198,104,404,143"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a78c31de83fb8b69dae8ef1377c31e845" title="난수생성 관련 eidt컴포넌트를 초기화합니다. " alt="" coords="180,561,422,587"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a305e69adc3b6a7217f7b91cf13e6a710" title="생성된 난수들을 파일로 저장합니다. " alt="" coords="181,512,421,537"/>
+<area shape="rect" id="node11" href="$class_main_window.html#a78cd940947897776c278f047ea058fbd" title="기초통계량&#45;일변량 데이터셋을 히스토그램으로 보여줍니다. " alt="" coords="202,167,399,192"/>
+<area shape="rect" id="node14" href="$class_main_window.html#a755585c287dfb4d5d249617aa078b735" title="기초통계량&#45;일변량을 계산하고 결과를 업데이트합니다. " alt="" coords="192,216,409,241"/>
+<area shape="rect" id="node21" href="$class_main_window.html#ad3b56b0edbb9f4f79dcf21205313fd58" title="기초통계량&#45;일변량 관련 edit컴포넌트를 초기화합니다. " alt="" coords="190,611,412,636"/>
+<area shape="rect" id="node22" href="$class_main_window.html#a3eb5d172add89e4119d886a02a9c50e0" title="기초통계량&#45;일변량 데이터와 계산 결과를 파일로 저장합니다. " alt="" coords="190,315,412,340"/>
+<area shape="rect" id="node23" href="$class_main_window.html#a6a9f28aa107072bf6869c8b48f197fb8" title="기초통계량&#45;이변량 데이터셋을 산점도로 보여줍니다. " alt="" coords="200,364,402,389"/>
+<area shape="rect" id="node26" href="$class_main_window.html#a3a7cfb0accf715e5f845ec4117c12222" title="기초통계량&#45;이변량을 계산하고 결과를 업데이트합니다. " alt="" coords="197,265,405,291"/>
+<area shape="rect" id="node27" href="$class_main_window.html#ab1b5db0658008efb090663ab8a67f7c9" title="기초통계량&#45;이변량 관련 edit컴포넌트를 초기화합니다. " alt="" coords="194,660,408,685"/>
+<area shape="rect" id="node28" href="$class_main_window.html#a95d7d5e12845353bf0c4ab810e962187" title="기초통계량&#45;이변량 데이터와 계산 결과를 파일로 저장합니다. " alt="" coords="194,413,408,439"/>
+<area shape="rect" id="node29" href="$class_main_window.html#ae57d21022fe4aa3bfe86434d129a78f1" title="가설검증을 실행합니다. " alt="" coords="188,463,414,488"/>
+<area shape="rect" id="node38" href="$class_main_window.html#ad2f29fb19f6cbe05a7d59e20f514009e" title="가설검증 관련 edit컴포넌트를 초기화합니다. " alt="" coords="175,709,426,735"/>
+<area shape="rect" id="node5" href="$class_rand_number.html#ab713f0ef78330be54147ec3b6cba8b97" title="난수를 생성합니다. " alt="" coords="497,108,657,133"/>
+<area shape="rect" id="node6" href="$class_main_window.html#ab550cad5c29365827496dfe01bf5409b" title="잘못된 입력에 대한 경고 메시지를 출력합니다. " alt="" coords="474,305,679,344"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a9ad7bdea1ad897bca9007f40b6cbee8f" title="파일 다이얼로그를 사용하여 텍스트를 파일로 저장합니다. " alt="" coords="493,480,661,505"/>
+<area shape="rect" id="node10" href="$class_save.html#aaa4104c8372e6d184c580a1933c0c03f" title="텍스트를 새로운 파일을 생성하여 저장합니다. " alt="" coords="766,476,861,501"/>
+<area shape="rect" id="node12" href="$mainwindow_8cpp.html#aec57b33b02b04491b2c42bb7654bf203" title="extractDataset" alt="" coords="523,256,631,281"/>
+<area shape="rect" id="node13" href="$class_stat_chart.html#a053fe2e9fe5838a554a2059f2cc7e0ad" title="일변량 데이터의 히스토그램을 qchart로 작성합니다. " alt="" coords="505,157,649,183"/>
+<area shape="rect" id="node15" href="$mainwindow_8cpp.html#ad6ea94d56fce24b4902a9125c6f1077d" title="writeUnivariateStatOutput" alt="" coords="490,207,664,232"/>
+<area shape="rect" id="node16" href="$class_foundation_stat.html#a0068d0a7bb637401eecd032a0b6b9d0c" title="평균을 계산합니다. " alt="" coords="1452,340,1605,365"/>
+<area shape="rect" id="node17" href="$class_foundation_stat.html#a76b061157e3708956da97e2bf2b3b995" title="분산을 계산합니다. " alt="" coords="960,315,1130,340"/>
+<area shape="rect" id="node19" href="$class_foundation_stat.html#a42f16b75c9552115b8a3173ca25d90b8" title="표준편차를 계산합니다. " alt="" coords="728,308,899,347"/>
+<area shape="rect" id="node20" href="$class_foundation_stat.html#a024eb13afb0ba1a39eba910fae7e4cb7" title="백분위수를 계산합니다. " alt="" coords="727,156,900,181"/>
+<area shape="rect" id="node18" href="$class_foundation_stat.html#adb6d1e578071377cc62c1687cf990b3c" title="편차 제곱의 합을 계산합니다. " alt="" coords="1190,333,1404,372"/>
+<area shape="rect" id="node24" href="$class_foundation_stat.html#a9f9167c67bdf4787f154cec387c06816" title="상관계수를 계산합니다. " alt="" coords="486,417,668,456"/>
+<area shape="rect" id="node25" href="$class_stat_chart.html#ae83b109d2fcaa93fa27003286c86a987" title="이변량 데이터의 다중산점돌르 qchart로 작성합니다. " alt="" coords="503,368,651,393"/>
+<area shape="rect" id="node30" href="$class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e" title="가설검정을 수행합니다. " alt="" coords="483,560,671,585"/>
+<area shape="rect" id="node31" href="$class_null_hypothesis.html#aab366022794f7b0c7dc4bad497824439" title="critical_region1 " alt="" coords="736,651,891,689"/>
+<area shape="rect" id="node36" href="$class_null_hypothesis.html#a9e0b0a492ad47ecc4f83e8556ced3585" title="critical_region2 " alt="" coords="736,525,891,564"/>
+<area shape="rect" id="node37" href="$class_null_hypothesis.html#ae8f61ccce96e2d21add0241b3035f624" title="critical_region3 " alt="" coords="736,588,891,627"/>
+<area shape="rect" id="node32" href="$class_null_hypothesis.html#a4e68aa128daae99c28f823a76880c0e7" title="t_integration " alt="" coords="949,569,1140,595"/>
+<area shape="rect" id="node34" href="$class_null_hypothesis.html#af96113404ab90237dead92cccf25bd5a" title="z_integration " alt="" coords="948,620,1142,645"/>
+<area shape="rect" id="node33" href="$class_null_hypothesis.html#ac2f7fea7c37aaa928ef8f2ef13250059" title="student " alt="" coords="1216,567,1378,592"/>
+<area shape="rect" id="node35" href="$class_null_hypothesis.html#a4700d641cf47cb33fd053a9635510161" title="standard_normal " alt="" coords="1212,616,1382,655"/>
+</map>

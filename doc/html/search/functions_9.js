@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pecentile',['pecentile',['../class_foundation_stat.html#a024eb13afb0ba1a39eba910fae7e4cb7',1,'FoundationStat']]],
-  ['print',['print',['../class_a_print.html#a14385854139d3da1931b044d5186b6e4',1,'APrint::print()'],['../class_print.html#ace567062530843d5b1be82591de78557',1,'Print::print()'],['../class_foundtation_stat_data.html#aab768c6a67dd13bc20fd57507cbb32f9',1,'FoundtationStatData::print()'],['../class_null_hypothesis_parameter.html#a7cc0c2886a536bd23579b98a8bd235c5',1,'NullHypothesisParameter::print()']]]
+  ['nullhypothesisparameter',['NullHypothesisParameter',['../class_null_hypothesis_parameter.html#a1e6ec5eab3aa42e8ea30dab0ea1da1c0',1,'NullHypothesisParameter::NullHypothesisParameter()'],['../class_null_hypothesis_parameter.html#a2d712475ae5fd45b3b612e38d20940ab',1,'NullHypothesisParameter::NullHypothesisParameter(double testStatistic, double standardDeviation, int dataSize, double testValue, double alpha, NullHypothesisSign sign)']]]
 ];

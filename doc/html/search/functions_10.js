@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emainwindow',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
+  ['z_5fintegration',['z_integration',['../class_null_hypothesis.html#af96113404ab90237dead92cccf25bd5a',1,'NullHypothesis']]]
 ];

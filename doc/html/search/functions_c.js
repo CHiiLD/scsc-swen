@@ -1,5 +1,27 @@
 var searchData=
 [
-  ['t_5fintegration',['t_integration',['../class_null_hypothesis.html#a4e68aa128daae99c28f823a76880c0e7',1,'NullHypothesis']]],
-  ['tofile',['ToFile',['../class_save.html#aaa4104c8372e6d184c580a1933c0c03f',1,'Save']]]
+  ['savebivariatedata',['saveBivariateData',['../class_main_window.html#a95d7d5e12845353bf0c4ab810e962187',1,'MainWindow']]],
+  ['saverandnumberdata',['saveRandNumberData',['../class_main_window.html#a305e69adc3b6a7217f7b91cf13e6a710',1,'MainWindow']]],
+  ['savetofile',['saveToFile',['../class_main_window.html#a9ad7bdea1ad897bca9007f40b6cbee8f',1,'MainWindow']]],
+  ['saveunivariatedata',['saveUnivariateData',['../class_main_window.html#a3eb5d172add89e4119d886a02a9c50e0',1,'MainWindow']]],
+  ['scatterplot',['scatterPlot',['../class_stat_chart.html#ae83b109d2fcaa93fa27003286c86a987',1,'StatChart']]],
+  ['setalpha',['setAlpha',['../class_null_hypothesis_parameter.html#a4d6e3d44ebb91bfa0e88cb6ac4c9b8f2',1,'NullHypothesisParameter']]],
+  ['setdatasize',['setDataSize',['../class_null_hypothesis_parameter.html#a4a90743e8ce67ec0334843179ad00df5',1,'NullHypothesisParameter']]],
+  ['setmean',['setMean',['../class_foundation_stat_data.html#a421719980c271a676261a7623aea7a0c',1,'FoundationStatData::setMean()'],['../class_foundation_stat_data_builder.html#a25666de3fb0e9751f9264aa060e99e91',1,'FoundationStatDataBuilder::setMean()']]],
+  ['setq1',['setQ1',['../class_foundation_stat_data.html#a1ab156b22298ffaf75260e65773e7fdf',1,'FoundationStatData::setQ1()'],['../class_foundation_stat_data_builder.html#a1eba76a94291cc495f4ff98f23dc7b0b',1,'FoundationStatDataBuilder::setQ1()']]],
+  ['setq2',['setQ2',['../class_foundation_stat_data.html#ad0cbb73ffd605135111a13668b8fec5a',1,'FoundationStatData::setQ2()'],['../class_foundation_stat_data_builder.html#af857e47fc005908b2c7b127a7739064c',1,'FoundationStatDataBuilder::setQ2()']]],
+  ['setq3',['setQ3',['../class_foundation_stat_data.html#a047c968ae275cc6ac0970ad11972543c',1,'FoundationStatData::setQ3()'],['../class_foundation_stat_data_builder.html#af0d318d832ad662c11f7716e13ec9efe',1,'FoundationStatDataBuilder::setQ3()']]],
+  ['setsign',['setSign',['../class_null_hypothesis_parameter.html#a5dbda1a9e422114557be322f51e2b5fe',1,'NullHypothesisParameter']]],
+  ['setstandarddeviation',['setStandardDeviation',['../class_foundation_stat_data.html#aaea9d106b32950ed49d282d6ee6e9cfa',1,'FoundationStatData::setStandardDeviation()'],['../class_foundation_stat_data_builder.html#a422d8a81d5da2260918597676cd38e19',1,'FoundationStatDataBuilder::setStandardDeviation()'],['../class_null_hypothesis_parameter.html#a765d9830020b9a46042d7f7252c71d9e',1,'NullHypothesisParameter::setStandardDeviation()']]],
+  ['setteststatistic',['setTestStatistic',['../class_null_hypothesis_parameter.html#a1a9191671713f1ea178df0f6ba831068',1,'NullHypothesisParameter']]],
+  ['settestvalue',['setTestValue',['../class_null_hypothesis_parameter.html#abcd57085f529f4e9dbaa149266478cef',1,'NullHypothesisParameter']]],
+  ['setvariance',['setVariance',['../class_foundation_stat_data.html#ac35317f9ee76a8bf7c6b45ba77ade200',1,'FoundationStatData::setVariance()'],['../class_foundation_stat_data_builder.html#a95fba2a0a1c24638d5650fb061982056',1,'FoundationStatDataBuilder::setVariance()']]],
+  ['showabout',['showAbout',['../class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197',1,'MainWindow']]],
+  ['showhistogram',['showHistogram',['../class_main_window.html#a78cd940947897776c278f047ea058fbd',1,'MainWindow']]],
+  ['showscatterplot',['showScatterPlot',['../class_main_window.html#a6a9f28aa107072bf6869c8b48f197fb8',1,'MainWindow']]],
+  ['showwronginputmessagebox',['showWrongInputMessageBox',['../class_main_window.html#ab550cad5c29365827496dfe01bf5409b',1,'MainWindow']]],
+  ['standard_5fnormal',['standard_normal',['../class_null_hypothesis.html#a4700d641cf47cb33fd053a9635510161',1,'NullHypothesis']]],
+  ['standarddeviation',['standardDeviation',['../class_foundation_stat.html#a42f16b75c9552115b8a3173ca25d90b8',1,'FoundationStat']]],
+  ['student',['student',['../class_null_hypothesis.html#ac2f7fea7c37aaa928ef8f2ef13250059',1,'NullHypothesis']]],
+  ['sumofdeviationsquare',['sumOfDeviationSquare',['../class_foundation_stat.html#adb6d1e578071377cc62c1687cf990b3c',1,'FoundationStat']]]
 ];

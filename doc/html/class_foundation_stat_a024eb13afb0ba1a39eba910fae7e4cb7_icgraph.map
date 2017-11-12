@@ -1,0 +1,7 @@
+<map id="FoundationStat::pecentile" name="FoundationStat::pecentile">
+<area shape="rect" id="node2" href="$mainwindow_8cpp.html#ad6ea94d56fce24b4902a9125c6f1077d" title="writeUnivariateStatOutput" alt="" coords="226,31,399,56"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a755585c287dfb4d5d249617aa078b735" title="기초통계량&#45;일변량을 계산하고 결과를 업데이트합니다. " alt="" coords="447,5,664,31"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a3a7cfb0accf715e5f845ec4117c12222" title="기초통계량&#45;이변량을 계산하고 결과를 업데이트합니다. " alt="" coords="451,55,660,80"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title="사전에 ui컴포넌트의 이벤트와 기초통계량 테이블뷰를 설정합니다. " alt="" coords="712,31,834,56"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="882,31,1064,56"/>
+</map>

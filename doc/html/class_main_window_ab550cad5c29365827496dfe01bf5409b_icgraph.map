@@ -1,0 +1,12 @@
+<map id="MainWindow::showWrongInputMessageBox" name="MainWindow::showWrongInputMessageBox">
+<area shape="rect" id="node2" href="$class_main_window.html#a02558647ad7d371d5499604f2786e745" title="난수를 생성하고 결과를 업데이트합니다. " alt="" coords="268,5,475,44"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a78cd940947897776c278f047ea058fbd" title="기초통계량&#45;일변량 데이터셋을 히스토그램으로 보여줍니다. " alt="" coords="273,68,470,93"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a755585c287dfb4d5d249617aa078b735" title="기초통계량&#45;일변량을 계산하고 결과를 업데이트합니다. " alt="" coords="263,117,480,143"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a3eb5d172add89e4119d886a02a9c50e0" title="기초통계량&#45;일변량 데이터와 계산 결과를 파일로 저장합니다. " alt="" coords="261,167,482,192"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a6a9f28aa107072bf6869c8b48f197fb8" title="기초통계량&#45;이변량 데이터셋을 산점도로 보여줍니다. " alt="" coords="271,216,472,241"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a3a7cfb0accf715e5f845ec4117c12222" title="기초통계량&#45;이변량을 계산하고 결과를 업데이트합니다. " alt="" coords="267,265,476,291"/>
+<area shape="rect" id="node10" href="$class_main_window.html#a95d7d5e12845353bf0c4ab810e962187" title="기초통계량&#45;이변량 데이터와 계산 결과를 파일로 저장합니다. " alt="" coords="265,315,478,340"/>
+<area shape="rect" id="node11" href="$class_main_window.html#ae57d21022fe4aa3bfe86434d129a78f1" title="가설검증을 실행합니다. " alt="" coords="258,364,485,389"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title="사전에 ui컴포넌트의 이벤트와 기초통계량 테이블뷰를 설정합니다. " alt="" coords="533,192,655,217"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="703,192,884,217"/>
+</map>

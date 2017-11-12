@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['q1',['q1',['../class_foundtation_stat_data.html#aad73d0dddd59d3ff33102dd5f647a4c3',1,'FoundtationStatData']]],
-  ['q2',['q2',['../class_foundtation_stat_data.html#a556f36e4ab771f1cd29b3fee1b8e7aad',1,'FoundtationStatData']]],
-  ['q3',['q3',['../class_foundtation_stat_data.html#aace7abcf006f364abab1113141d59347',1,'FoundtationStatData']]],
+  ['q1',['q1',['../class_foundation_stat_data.html#a0d854ad22277345b6a47a2eb3f65d3a2',1,'FoundationStatData::q1()'],['../class_foundation_stat_data_builder.html#aea232ec730a89e6cd44b2b653f8aa103',1,'FoundationStatDataBuilder::q1()']]],
+  ['q2',['q2',['../class_foundation_stat_data.html#ab772b35ab269f065fc935fd99ae3b75d',1,'FoundationStatData::q2()'],['../class_foundation_stat_data_builder.html#ae50a0991cc7b16b2527027a2510c22cc',1,'FoundationStatDataBuilder::q2()']]],
+  ['q3',['q3',['../class_foundation_stat_data.html#a2642b291ec6f438a8a5dd4a48913509b',1,'FoundationStatData::q3()'],['../class_foundation_stat_data_builder.html#aa4aa21281a17f3d1382618333b0d609f',1,'FoundationStatDataBuilder::q3()']]],
   ['quit',['quit',['../class_main_window.html#a542a7527ced73b2c9bc14f8dc9661a66',1,'MainWindow']]]
 ];

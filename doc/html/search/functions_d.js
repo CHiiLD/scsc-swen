@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['variance',['variance',['../class_foundation_stat.html#a76b061157e3708956da97e2bf2b3b995',1,'FoundationStat']]]
+  ['t_5fintegration',['t_integration',['../class_null_hypothesis.html#a4e68aa128daae99c28f823a76880c0e7',1,'NullHypothesis']]],
+  ['tofile',['ToFile',['../class_save.html#aaa4104c8372e6d184c580a1933c0c03f',1,'Save']]]
 ];

@@ -1,19 +1,26 @@
 digraph "NullHypothesis::t_integration"
 {
+  bgcolor="transparent";
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node68 [label="NullHypothesis::t_integration",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node68 -> Node69 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node69 [label="NullHypothesis::critical\l_region1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#aab366022794f7b0c7dc4bad497824439"];
-  Node69 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node70 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e"];
-  Node70 -> Node71 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node71 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d"];
-  Node68 -> Node72 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node72 [label="NullHypothesis::critical\l_region2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#a9e0b0a492ad47ecc4f83e8556ced3585"];
-  Node72 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node68 -> Node73 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node73 [label="NullHypothesis::critical\l_region3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_null_hypothesis.html#ae8f61ccce96e2d21add0241b3035f624"];
-  Node73 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="NullHypothesis::t_integration",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node86 -> Node87 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="NullHypothesis::critical\l_region1",height=0.2,width=0.4,color="black",URL="$class_null_hypothesis.html#aab366022794f7b0c7dc4bad497824439",tooltip="critical_region1 "];
+  Node87 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black",URL="$class_null_hypothesis.html#a180da3004e312f04ecad408ed72c359e",tooltip="가설검정을 수행합니다. "];
+  Node88 -> Node89 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="MainWindow::judgeNullHypothesis",height=0.2,width=0.4,color="black",URL="$class_main_window.html#ae57d21022fe4aa3bfe86434d129a78f1",tooltip="가설검증을 실행합니다. "];
+  Node89 -> Node90 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node90 [label="MainWindow::init",height=0.2,width=0.4,color="black",URL="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952",tooltip="사전에 ui컴포넌트의 이벤트와 기초통계량 테이블뷰를 설정합니다. "];
+  Node90 -> Node91 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node91 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black",URL="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db"];
+  Node88 -> Node92 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node92 [label="NullHypothesis::hyphothesis",height=0.2,width=0.4,color="black",URL="$class_null_hypothesis.html#a174eefddec16be350423e01a3bb5025d",tooltip="가설검정을 수행합니다. "];
+  Node86 -> Node93 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node93 [label="NullHypothesis::critical\l_region2",height=0.2,width=0.4,color="black",URL="$class_null_hypothesis.html#a9e0b0a492ad47ecc4f83e8556ced3585",tooltip="critical_region2 "];
+  Node93 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 -> Node94 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node94 [label="NullHypothesis::critical\l_region3",height=0.2,width=0.4,color="black",URL="$class_null_hypothesis.html#ae8f61ccce96e2d21add0241b3035f624",tooltip="critical_region3 "];
+  Node94 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

@@ -1,0 +1,10 @@
+<map id="extractDataset" name="extractDataset">
+<area shape="rect" id="node2" href="$class_main_window.html#a78cd940947897776c278f047ea058fbd" title="기초통계량&#45;일변량 데이터셋을 히스토그램으로 보여줍니다. " alt="" coords="173,5,370,31"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a755585c287dfb4d5d249617aa078b735" title="기초통계량&#45;일변량을 계산하고 결과를 업데이트합니다. " alt="" coords="163,55,380,80"/>
+<area shape="rect" id="node6" href="$class_main_window.html#a3eb5d172add89e4119d886a02a9c50e0" title="기초통계량&#45;일변량 데이터와 계산 결과를 파일로 저장합니다. " alt="" coords="161,104,382,129"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a6a9f28aa107072bf6869c8b48f197fb8" title="기초통계량&#45;이변량 데이터셋을 산점도로 보여줍니다. " alt="" coords="171,153,372,179"/>
+<area shape="rect" id="node8" href="$class_main_window.html#a3a7cfb0accf715e5f845ec4117c12222" title="기초통계량&#45;이변량을 계산하고 결과를 업데이트합니다. " alt="" coords="167,203,376,228"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a95d7d5e12845353bf0c4ab810e962187" title="기초통계량&#45;이변량 데이터와 계산 결과를 파일로 저장합니다. " alt="" coords="165,252,378,277"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title="사전에 ui컴포넌트의 이벤트와 기초통계량 테이블뷰를 설정합니다. " alt="" coords="430,129,552,155"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="600,129,782,155"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="RandNumber::generate" name="RandNumber::generate">
+<area shape="rect" id="node2" href="$class_main_window.html#a02558647ad7d371d5499604f2786e745" title="난수를 생성하고 결과를 업데이트합니다. " alt="" coords="214,5,421,44"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title="사전에 ui컴포넌트의 이벤트와 기초통계량 테이블뷰를 설정합니다. " alt="" coords="469,12,591,37"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="639,12,820,37"/>
+</map>

@@ -12,58 +12,59 @@
 class NullHypothesis
 {
 private:
-    /**
-     * @brief student
-     * @param number
-     * @param t
-     * @return
-     */
-    static double student(int number, double t);
+private:
+   /**
+    * @brief t분포 함수를 계산합니다
+    * @param number 표본개수
+    * @param t 확률변수
+    * @return t분포값
+    */
+   static double student(int number, double t);
 
-    /**
-     * @brief t_integration
-     * @param alpha
-     * @param num
-     * @return
-     */
-    static double t_integration(double alpha, int num);
+   /**
+    * @brief t분포의 백분위수를 계산합니다.
+    * @param alpha 유의수준
+    * @param num 표본개수
+    * @return t분포의 백분위수
+    */
+   static double t_integration(double alpha, int num);
 
-    /**
-     * @brief standard_normal
-     * @param z
-     * @return
-     */
-    static double standard_normal(double z);
+   /**
+    * @brief 정규분포 함수를 계산합니다
+    * @param z 확률변수
+    * @return 정구본포값
+    */
+   static double standard_normal(double z);
 
-    /**
-     * @brief z_integration
-     * @param alpha
-     * @return
-     */
-    static double z_integration(double alpha);
+   /**
+    * @brief 정규분포의 백분위수를 계산합니다.
+    * @param alpha 유의수준
+    * @return 정규분포의 백분위수값
+    */
+   static double z_integration(double alpha);
 
-    /**
-     * @brief critical_region1
-     * @param n
-     * @param alpha
-     * @return
-     */
-    static double critical_region1(int n, double alpha);
+   /**
+    * @brief 귀무가설이 '>'일 때의 기각역을 계산합니다.
+    * @param n 표본개수
+    * @param alpha 유의수준
+    * @return 기각역
+    */
+   static double critical_region1(int n, double alpha);
 
-    /**
-     * @brief critical_region2
-     * @param n
-     * @param alpha
-     * @return
-     */
-    static double critical_region2(int n, double alpha);
+   /**
+    * @brief 귀무가설이 '<'일 때의 기각역을 계산합니다.
+    * @param n 표본개수
+    * @param alpha 유의수준
+    * @return 기각역
+    */
+   static double critical_region2(int n, double alpha);
 
-    /**
-     * @brief critical_region3
-     * @param n
-     * @param alpha
-     * @return
-     */
+   /**
+    * @brief 귀무가설이 '!='일 때의 기각역을 계산합니다.
+    * @param n 표본개수
+    * @param alpha 유의수준
+    * @return 기각역
+    */
     static double critical_region3(int n, double alpha);
 public:
     /**

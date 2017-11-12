@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_5fintegration',['z_integration',['../class_null_hypothesis.html#af96113404ab90237dead92cccf25bd5a',1,'NullHypothesis']]]
+  ['writeunivariatestatoutput',['writeUnivariateStatOutput',['../mainwindow_8cpp.html#ad6ea94d56fce24b4902a9125c6f1077d',1,'mainwindow.cpp']]]
 ];

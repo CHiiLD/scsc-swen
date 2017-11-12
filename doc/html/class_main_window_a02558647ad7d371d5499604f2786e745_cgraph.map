@@ -1,0 +1,4 @@
+<map id="MainWindow::genelateRandomNumber" name="MainWindow::genelateRandomNumber">
+<area shape="rect" id="node2" href="$class_rand_number.html#ab713f0ef78330be54147ec3b6cba8b97" title="난수를 생성합니다. " alt="" coords="282,5,443,31"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ab550cad5c29365827496dfe01bf5409b" title="잘못된 입력에 대한 경고 메시지를 출력합니다. " alt="" coords="260,55,465,93"/>
+</map>

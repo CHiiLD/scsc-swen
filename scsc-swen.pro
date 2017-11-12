@@ -33,7 +33,7 @@ SOURCES += \
     aprint.cpp \
     save.cpp \
     statchart.cpp \
-    foundtationstatdata.cpp
+    foundationstatdata.cpp
 
 
 HEADERS += \
@@ -46,7 +46,7 @@ HEADERS += \
     swen.h \
     save.h \
     statchart.h \
-    foundtationstatdata.h
+    foundationstatdata.h
 
 
 FORMS += \
