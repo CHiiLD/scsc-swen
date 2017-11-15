@@ -14,16 +14,20 @@ bool Save::ToFile(QWidget* parent, QString text, QString& error, const char* cod
     }
 
     QFile file(fileName);
-    if (!file.open(QIODevice::WriteOnly))
+    bool ret = false;
+    do
     {
-        error = file.errorString();
-        return false;
-    }
+        if (!file.open(QIODevice::WriteOnly))
+        {
+            error = file.errorString();
+            break;
+        }
+        QTextStream stream(&file);
+        stream.setCodec(codec);
+        stream << text;
+        ret = true;
+    } while(false);
 
-    QTextStream stream(&file);
-    stream.setCodec(codec);
-    stream << text;
     file.close();
-
-    return true;
+    return ret;
 }
