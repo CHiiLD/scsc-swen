@@ -1,5 +1,0 @@
-<map id="StatChart::scatterPlot" name="StatChart::scatterPlot">
-<area shape="rect" id="node2" href="$class_main_window.html#a6a9f28aa107072bf6869c8b48f197fb8" title="기초통계량&#45;이변량 데이터셋을 산점도로 보여줍니다. " alt="" coords="201,5,403,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title="사전에 ui컴포넌트의 이벤트와 기초통계량 테이블뷰를 설정합니다. " alt="" coords="451,5,573,31"/>
-<area shape="rect" id="node4" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="621,5,802,31"/>
-</map>

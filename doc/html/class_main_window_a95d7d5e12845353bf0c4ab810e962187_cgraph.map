@@ -1,9 +1,0 @@
-<map id="MainWindow::saveBivariateData" name="MainWindow::saveBivariateData">
-<area shape="rect" id="node2" href="$mainwindow_8cpp.html#aec57b33b02b04491b2c42bb7654bf203" title="extractDataset" alt="" coords="315,5,423,31"/>
-<area shape="rect" id="node3" href="$class_foundation_stat.html#a9f9167c67bdf4787f154cec387c06816" title="상관계수를 계산합니다. " alt="" coords="278,55,460,93"/>
-<area shape="rect" id="node6" href="$class_main_window.html#ab550cad5c29365827496dfe01bf5409b" title="잘못된 입력에 대한 경고 메시지를 출력합니다. " alt="" coords="267,117,471,156"/>
-<area shape="rect" id="node7" href="$class_main_window.html#a9ad7bdea1ad897bca9007f40b6cbee8f" title="파일 다이얼로그를 사용하여 텍스트를 파일로 저장합니다. " alt="" coords="285,180,453,205"/>
-<area shape="rect" id="node4" href="$class_foundation_stat.html#a0068d0a7bb637401eecd032a0b6b9d0c" title="평균을 계산합니다. " alt="" coords="782,63,934,88"/>
-<area shape="rect" id="node5" href="$class_foundation_stat.html#adb6d1e578071377cc62c1687cf990b3c" title="편차 제곱의 합을 계산합니다. " alt="" coords="519,84,734,123"/>
-<area shape="rect" id="node8" href="$class_save.html#aaa4104c8372e6d184c580a1933c0c03f" title="텍스트를 새로운 파일을 생성하여 저장합니다. " alt="" coords="579,180,674,205"/>
-</map>

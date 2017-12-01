@@ -19,7 +19,11 @@ int FoundationStat::variance(dataset data, double& variance)
     if(sumOfDeviationSquare(data, sum) != 0)
         return -1;
 
-    variance = sum / (size - 1);
+    if(size == 1)
+        variance = 0;
+    else
+        variance = sum / (size - 1);
+
     return OK;
 }
 
@@ -108,10 +112,10 @@ int FoundationStat::correlationCoefficient(dataset dataX, dataset dataY, double&
 int FoundationStat::sumOfDeviationSquare(dataset data, double& value)
 {
     double mean;
-
     if(FoundationStat::mean(data, mean) != 0)
         return -1;
 
+    value = 0;
     for(auto iter = data.begin(); iter != data.end(); ++iter)
         value += pow(mean - *iter, 2);
 

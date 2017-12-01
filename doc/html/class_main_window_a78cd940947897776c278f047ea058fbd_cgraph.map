@@ -1,5 +1,0 @@
-<map id="MainWindow::showHistogram" name="MainWindow::showHistogram">
-<area shape="rect" id="node2" href="$mainwindow_8cpp.html#aec57b33b02b04491b2c42bb7654bf203" title="extractDataset" alt="" coords="299,5,406,31"/>
-<area shape="rect" id="node3" href="$class_main_window.html#ab550cad5c29365827496dfe01bf5409b" title="잘못된 입력에 대한 경고 메시지를 출력합니다. " alt="" coords="250,55,455,93"/>
-<area shape="rect" id="node4" href="$class_stat_chart.html#a053fe2e9fe5838a554a2059f2cc7e0ad" title="일변량 데이터의 히스토그램을 qchart로 작성합니다. " alt="" coords="281,117,425,143"/>
-</map>
