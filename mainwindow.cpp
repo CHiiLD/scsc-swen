@@ -23,6 +23,7 @@
 #define TERM_Y "Y"
 #define TERM_FOUNDATION_STAT "기초통계량"
 #define TERM_DATASET "데이터 셋"
+#define LINE_FEED "\r\n"
 
 using namespace QtCharts;
 
@@ -307,7 +308,7 @@ void MainWindow::saveUnivariateData(bool checked)
     QString q3 =model->data(model->index(0, 5)).toString();
 
     QString split = " : ";
-    QString newline = "\n";
+    QString newline = LINE_FEED;
     // 기초통계량 정보
     text.append(TERM_FOUNDATION_STAT).append(newline);
     text.append(TERM_MEAN).append(split).append(mean).append(newline);
@@ -417,7 +418,7 @@ void MainWindow::saveBivariateData(bool checked)
     model = ui->tableView_bivariateOutput->model();
     QString dataName[] = {TERM_X, TERM_Y};
     QString split = " : ";
-    QString newline = "\n";
+    QString newline = LINE_FEED;
     QString space = " ";
     for(int row = 0; row < 2; ++row)
     {
