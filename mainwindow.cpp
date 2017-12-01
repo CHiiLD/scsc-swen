@@ -323,7 +323,7 @@ void MainWindow::saveUnivariateData(bool checked)
     text.append(TERM_X).append(TERM_DATASET).append(newline);
     for(auto iter = data.begin(); iter != data.end(); ++iter)
         text.append(QString::number(*iter)).append(newline);
-    text.remove(text.length() -1, 1); //마지막 개행문자 삭제
+
     saveToFile(text);
 }
 
@@ -454,7 +454,6 @@ void MainWindow::saveBivariateData(bool checked)
         text.append(QString::number(*iterX)).append(space).append(QString::number(*iterY)).append(newline);
     }
 
-    text.remove(text.length() -1, 1); //마지막 개행문자 삭제
     saveToFile(text);
 }
 
